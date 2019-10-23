@@ -14,6 +14,11 @@ use Request\Request;
 
 class RoleController
 {
+    public function __construct()
+    {
+        auth('SuperAdminData');
+    }
+
     public function roleIndex(){
         $roles = Role::all();
         export('backend/roles/view_all',$roles);

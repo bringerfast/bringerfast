@@ -44,6 +44,12 @@ function view($filename){
     include_once basePath().'/Views/'.$filename;
 }
 
+function auth($SessionKey){
+    if (!$_SESSION[$SessionKey]){
+        redirect('/');
+    }
+}
+
 /**
  * @return mixed
  * To import data from view those data were exported at controller
