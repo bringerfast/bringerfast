@@ -21,7 +21,6 @@ class MovieCategoryController
 
     public function movieCategoryIndex(){
         $movieCategories = MovieCategory::all();
-        dd($movieCategories);
         export('backend/movie_categories/view_all',$movieCategories);
     }
 

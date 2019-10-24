@@ -34,7 +34,11 @@ function export($ViewName,$data){
     global $incommingData,$session;
     $incommingData = $data;
     $session = new \Sessions\Session();
-    include_once basePath()."/Views/".$ViewName.".php";
+    $viewFullPath = basePath()."/Views/".$ViewName.".php";
+    if (!file_exists($viewFullPath)){
+        throwError('View Not Found At : '.$viewFullPath);
+    }
+    include_once $viewFullPath;
 }
 
 function baseURL(){
@@ -42,7 +46,11 @@ function baseURL(){
 }
 
 function view($filename){
-    include_once basePath().'/Views/'.$filename;
+    $fullPath = basePath().'/Views/'.$filename;
+    if (!file_exists($fullPath)){
+        throwError('View Not Found At : '.$fullPath);
+    }
+    include_once $fullPath;
 }
 
 function auth($SessionKey){
