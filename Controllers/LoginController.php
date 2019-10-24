@@ -26,6 +26,9 @@ class LoginController
             if($user['role_name']=="SuperAdmin"){
                 $request->setSession("SuperAdminData",$user) ;
                 export('backend/dashboard/dashboard',$user);
+            } else {
+                throwError('Role SuperAdmin Not found in your t_roles table of your database<br>
+                                     Please add Role SuperAdmin manualy in t_role table of your database');
             }
         } else {
             export('backend/authentication/login',['message'=>'Authentication Error!']);
@@ -40,6 +43,8 @@ class LoginController
     public function sendResetEmail(Request $request)
     {
         $formData = $request->getBody();
-        exec('echo -e "Subject: Test Mail\r\n\r\nThis is my first test email." |msmtp --debug --from=default -t '.$formData['userEmail']);
+        $otp = rand(111111,999999);
+        $content = "Your One Time Password is:$otp";
+        exec('echo -e "Subject: Froget Password\r\n\r\n'.$content.'" |msmtp --debug --from=default -t '.$formData['userEmail']);
     }
 }

@@ -19,7 +19,7 @@ function basePath(){
 }
 
 function dd($data){
-    echo "<body style='background: #0b2e13;width: 100%;color: white;'><pre>";
+    echo "<body style='background: #0b2e13;width: 100%;color: white;'><h1 style='text-align: center'>Display Data</h1><pre>";
     print_r($data);
     echo "</body>";
     exit;
@@ -65,7 +65,7 @@ function asset($name){
 }
 
 function throwError($errorMsg){
-    echo "<body style='background: #0b2e13;width: 100%;color: white;'>";
+    echo "<body style='background: #0b2e13;width: 100%;color: white;'><h1 style='text-align: center'>Error Message</h1>";
     die(
         "<hr><div style='background: #0b2e13;width: 100%;color: white;'>$errorMsg</div><hr></body>"
     );
@@ -88,7 +88,6 @@ function RouteLoader(){
 }
 RouteLoader();
 
-testM();
 
 
 

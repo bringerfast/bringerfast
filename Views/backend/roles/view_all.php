@@ -45,7 +45,7 @@
                                     <td>
                                         <a href="<?php echo baseURL().'/roleShow?role_id='.$value['role_id']; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
                                         <a href="<?php echo baseURL().'/roleEditForm?role_id='.$value['role_id']; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/roleDelete?role_id='.$value['role_id']; ?>"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?php echo baseURL().'/roleDelete?role_id='.$value['role_id']; ?>" onclick="return confirm('Are you sure to delte ?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

@@ -82,7 +82,10 @@ class User
                   ON roles.role_id = users.r_role_id
               WHERE user_id = :user_id LIMIT 1"
             );
-            $stmt->execute([':user_id' => $user_id]);
+            $result = $stmt->execute([':user_id' => $user_id]);
+            if (!$result){
+                throwError('Error notified from User model at line :'.__LINE__);
+            }
             return $stmt->fetch();
         } catch (PDOException $e){
             echo 'Error notified from User model at line :'.__LINE__;
