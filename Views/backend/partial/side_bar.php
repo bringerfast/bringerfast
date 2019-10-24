@@ -9,10 +9,16 @@
     </div>
     <ul class="app-menu">
         <li><a class="app-menu__item" href="<?php echo baseURL().'/admin'; ?>"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">Role & User</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">User & Role</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
-                <li><a class="treeview-item" href="<?php echo baseURL().'/roleIndex' ?>"><i class="icon fa fa-circle-o"></i> Roles</a></li>
                 <li><a class="treeview-item" href="<?php echo baseURL().'/userIndex' ?>"><i class="icon fa fa-circle-o"></i> Users</a></li>
+                <li><a class="treeview-item" href="<?php echo baseURL().'/roleIndex' ?>"><i class="icon fa fa-circle-o"></i> Roles</a></li>
+            </ul>
+        </li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-video-camera"></i><span class="app-menu__label">Movies & Category</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="<?php echo baseURL().'/movieIndex' ?>"><i class="icon fa fa-circle-o"></i> Movies</a></li>
+                <li><a class="treeview-item" href="<?php echo baseURL().'/movieCategoryIndex' ?>"><i class="icon fa fa-circle-o"></i> Categories</a></li>
             </ul>
         </li>
     </ul>

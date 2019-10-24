@@ -19,7 +19,7 @@ function basePath(){
 }
 
 function dd($data){
-    echo "<body style='background: #0b2e13;width: 100%;color: white;'><h1 style='text-align: center'>Display Data</h1><pre>";
+    echo "<body style='background: #0b2e13;width: 100%;color: white;'><h1 style='text-align: center'>Display Data</h1><hr><pre>";
     print_r($data);
     echo "</body>";
     exit;

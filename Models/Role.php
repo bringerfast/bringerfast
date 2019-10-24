@@ -30,8 +30,7 @@ class Role
             }
             return $AllRows;
         } catch (PDOException $e){
-            echo 'Error notified from Role model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError('Error notified from Role at line :'.__LINE__."<br>".$e->getMessage());
         }
     }
 
@@ -45,8 +44,7 @@ class Role
             }
             return true;
         } catch (PDOException $e){
-            echo 'Error notified from Role model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError('Error notified from Role at line :'.__LINE__."<br>".$e->getMessage());
         }
     }
 
@@ -59,8 +57,7 @@ class Role
             }
             return $stmt->fetch();
         } catch (PDOException $e){
-            echo 'Error notified from Role model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError('Error notified from Role at line :'.__LINE__."<br>".$e->getMessage());
         }
     }
 
@@ -73,8 +70,7 @@ class Role
                 throwError('Error notified from Role model at line :'.__LINE__);
             }
         } catch (PDOException $e){
-            echo 'Error notified from Role model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError('Error notified from Role at line :'.__LINE__."<br>".$e->getMessage());
         }
     }
 
@@ -87,8 +83,7 @@ class Role
                 throwError('Error notified from Role model at line :'.__LINE__);
             }
         } catch (PDOException $e) {
-            echo 'Error notified from Role model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError('Error notified from Role at line :'.__LINE__."<br>".$e->getMessage());
         }
     }
 }

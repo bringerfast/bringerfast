@@ -23,8 +23,7 @@ class User
             }
             return $stmt->fetch();
         } catch (PDOException $e){
-            echo 'Error notified from User model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
         }
     }
 
@@ -41,8 +40,7 @@ class User
             }
             return $AllRows;
         } catch (PDOException $e){
-            echo 'Error notified from User model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
         }
     }
 
@@ -63,8 +61,7 @@ class User
                 throwError('Error notified from User model at line :'.__LINE__);
             }
         } catch (PDOException $e){
-            echo 'Error notified from User model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
         }
     }
 
@@ -88,8 +85,7 @@ class User
             }
             return $stmt->fetch();
         } catch (PDOException $e){
-            echo 'Error notified from User model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
         }
     }
 
@@ -121,8 +117,7 @@ class User
                 throwError('Error notified from User model at line :'.__LINE__);
             }
         } catch (PDOException $e){
-            echo 'Error notified from User model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
         }
     }
 
@@ -138,8 +133,7 @@ class User
                 throwError('Error notified from User model at line :'.__LINE__);
             }
         } catch (PDOException $e){
-            echo 'Error notified from User model at line :'.__LINE__;
-            throwError($e->getMessage());
+            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
         }
     }
 }

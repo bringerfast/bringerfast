@@ -1,6 +1,6 @@
 <?php
 
-# Test Welcome Route
+# Welcome Route
 Route::get('/',function (Request $request){
     export('welcome',[]);
 });
@@ -28,5 +28,25 @@ Route::get('/userShow', 'UserController@userShow');
 Route::get('/userEditForm', 'UserController@userEditForm');
 Route::post('/userUpdate', 'UserController@userUpdate');
 Route::get('/userDelete', 'UserController@userDelete');
+
+# Movie Category CRUD
+Route::get('/movieCategoryIndex', 'MovieCategoryController@movieCategoryIndex');
+Route::get('/movieCategoryForm', 'MovieCategoryController@movieCategoryForm');
+Route::post('/movieCategoryStore', 'MovieCategoryController@movieCategoryStore');
+Route::get('/movieCategoryShow', 'MovieCategoryController@movieCategoryShow');
+Route::get('/movieCategoryEditForm', 'MovieCategoryController@movieCategoryEditForm');
+Route::post('/movieCategoryUpdate', 'MovieCategoryController@movieCategoryUpdate');
+Route::get('/movieCategoryDelete', 'MovieCategoryController@movieCategoryDelete');
+
+# Movie CRUD
+Route::get('/movieIndex', 'MovieController@movieIndex');
+Route::get('/movieForm', 'MovieController@movieForm');
+Route::post('/movieStore', 'MovieController@movieStore');
+Route::get('/movieShow', 'MovieController@movieShow');
+Route::get('/movieEditForm', 'MovieController@movieEditForm');
+Route::post('/movieUpdate', 'MovieController@movieUpdate');
+Route::get('/movieDelete', 'MovieController@movieDelete');
+
+
 
 
