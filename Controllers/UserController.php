@@ -36,7 +36,8 @@ class UserController
     public function userEditForm(Request $request){
         $formData = $request->getBody();
         $user = User::select($formData['user_id']);
-        export('backend/users/edit_form',$user);
+        $roles = Role::all();
+        export('backend/users/edit_form',[$user,$roles]);
     }
 
     public function userUpdate(Request $request){

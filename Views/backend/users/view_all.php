@@ -55,7 +55,7 @@
                                     <td>
                                         <a href="<?php echo baseURL().'/userShow?user_id='.$value['user_id']; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
                                         <a href="<?php echo baseURL().'/userEditForm?user_id='.$value['user_id']; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/userDelete?user_id='.$value['user_id']; ?>"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?php echo baseURL().'/userDelete?user_id='.$value['user_id']; ?>" onclick="return confirm('Are your sure to delte ?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

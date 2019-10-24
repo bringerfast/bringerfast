@@ -19,8 +19,9 @@ function basePath(){
 }
 
 function dd($data){
-    echo '<pre>';
+    echo "<body style='background: #0b2e13;width: 100%;color: white;'><pre>";
     print_r($data);
+    echo "</body>";
     exit;
 }
 
@@ -61,6 +62,13 @@ function import(){
 
 function asset($name){
     return constant('BASE_URL').'/Assets/'.$name;
+}
+
+function throwError($errorMsg){
+    echo "<body style='background: #0b2e13;width: 100%;color: white;'>";
+    die(
+        "<hr><div style='background: #0b2e13;width: 100%;color: white;'>$errorMsg</div><hr></body>"
+    );
 }
 
 function redirect($route){
