@@ -70,8 +70,8 @@ class Route
      */
     private static function invalidMethodHandler()
     {
-        echo "<h1 style='text-align: center'>".self::$request->serverProtocol." 405 Method Not Allowed</h1>";
         header(self::$request->serverProtocol." 405 Method Not Allowed");
+        throwError("<h1 style='text-align: center'>".self::$request->serverProtocol." 405 Method Not Allowed</h1>");
     }
 
     /**
@@ -79,8 +79,8 @@ class Route
      */
     private static function defaultRequestHandler()
     {
-        echo "<h1 style='text-align: center'>".self::$request->serverProtocol." 404 Not Found</h1>";
         header(self::$request->serverProtocol." 404 Not Found");
+        throwError("<h1 style='text-align: center'>".self::$request->serverProtocol." 404 Not Found</h1>");
     }
 
     /**
@@ -105,11 +105,11 @@ class Route
             if(class_exists($method[0])){
                 $classObject = new $method[0]();
                 if (!method_exists($classObject,$method[1])){
-                    throwError('Method Not Found In '.$method[0]);
+                    throwError('Method Not Found In :'.$method[0]);
                 }
                 echo $classObject->{$method[1]}(self::$request);
             }else{
-                throwError('Class Not Found In Controllers '.$method[0]);
+                throwError('Class Not Found In Controllers :'.$method[0]);
             }
         }else{
             echo call_user_func_array($method, array(self::$request));
