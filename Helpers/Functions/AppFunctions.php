@@ -15,9 +15,13 @@ $session = '';
  * To get the root path of the Application
  */
 function basePath(){
-    return str_replace('/Helpers/Functions','',__DIR__);
+    return str_replace('/Helpers/Functions','',str_replace('\\','/',__DIR__));
 }
 
+/**
+ * @param $data
+ * To Display Data for debug
+ */
 function dd($data){
     echo "<body style='background: #0b2e13;width: 100%;color: white;'><h1 style='text-align: center'>Display Data</h1><hr><pre>";
     print_r($data);
@@ -41,10 +45,18 @@ function export($ViewName,$data){
     include_once $viewFullPath;
 }
 
+/**
+ * @return mixed
+ * To get base URL
+ */
 function baseURL(){
     return constant("BASE_URL");
 }
 
+/**
+ * @param $filename
+ * To include view
+ */
 function view($filename){
     $fullPath = basePath().'/Views/'.$filename;
     if (!file_exists($fullPath)){
@@ -53,6 +65,10 @@ function view($filename){
     include_once $fullPath;
 }
 
+/**
+ * @param $SessionKey
+ * To verify Authentication
+ */
 function auth($SessionKey){
     if (!$_SESSION[$SessionKey]){
         redirect('/');
@@ -68,10 +84,19 @@ function import(){
     return $incommingData;
 }
 
+/**
+ * @param $name
+ * @return string
+ * To incllude css and js file form asset path
+ */
 function asset($name){
     return constant('BASE_URL').'/Assets/'.$name;
 }
 
+/**
+ * @param $errorMsg
+ * To display error message
+ */
 function throwError($errorMsg){
     echo "<body style='background: #0b2e13;width: 100%;color: white;'><h1 style='text-align: center'>Error Message</h1>";
     die(
@@ -79,12 +104,17 @@ function throwError($errorMsg){
     );
 }
 
+/**
+ * @param $route
+ * URL redirect
+ */
 function redirect($route){
     header("Location: ".baseURL().$route);
 }
 
 /**
  * Get content form web.php then evaluate content with some addition string
+ * To autoload Routes from web.php
  */
 function RouteLoader(){
     $useStatement = 'use Request\Route;';
@@ -94,6 +124,10 @@ function RouteLoader(){
     $route = str_replace('<?php', '',$webPHP);
     eval($route);
 }
+
+/**
+ * To invoke Route loader method
+ */
 RouteLoader();
 
 

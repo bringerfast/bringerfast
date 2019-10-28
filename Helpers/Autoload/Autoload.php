@@ -43,4 +43,4 @@ class Autoload
     }
 }
 
-Autoload::load(str_replace('/Helpers/Autoload','',__DIR__));
+Autoload::load(str_replace('/Helpers/Autoload','',str_replace('\\','/',__DIR__)));

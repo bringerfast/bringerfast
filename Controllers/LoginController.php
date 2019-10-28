@@ -13,7 +13,7 @@ class LoginController
     public function index(Request $request){
         if ($request->getSession('SuperAdminData')!=false){
             export('backend/dashboard/dashboard',$request->getSession('SuperAdminData'));
-        } else{
+        } else {
             export('backend/authentication/login','');
         }
     }
@@ -43,8 +43,28 @@ class LoginController
     public function sendResetEmail(Request $request)
     {
         $formData = $request->getBody();
-        $otp = rand(111111,999999);
-        $content = "Your One Time Password is:$otp";
-        exec('echo -e "Subject: Froget Password\r\n\r\n'.$content.'" |msmtp --debug --from=default -t '.$formData['userEmail']);
+        $to = $formData['userEmail'];
+        $from = 'bringerfast@gmail.com';
+        $fromName = 'BringerFast';
+
+        $subject = "Send Test Email in PHP by BringerFast";
+
+        $htmlContent = 'Test Html Content';
+
+        // Set content-type header for sending HTML email
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+        // Additional headers
+        $headers .= 'From: '.$fromName.'<'.$from.'>' . "\r\n";
+//        $headers .= 'Cc: welcome@example.com' . "\r\n";
+//        $headers .= 'Bcc: welcome2@example.com' . "\r\n";
+        echo $htmlContent;
+        // Send email
+        if(mail($to, $subject, $htmlContent, $headers)){
+            echo 'Email has sent successfully.';
+        }else{
+            echo 'Email sending failed.';
+        }
     }
 }
