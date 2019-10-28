@@ -10,6 +10,7 @@ namespace Models;
 
 
 use Connection\DB;
+use function MongoDB\BSON\toJSON;
 use Throwable;
 
 class Movie
@@ -30,16 +31,45 @@ class Movie
 
     public static function insert($data){
         try{
-            $sql = "INSERT INTO t_users (r_role_id,name,email,password,mobile,status) 
-                    VALUES (:r_role_id,:name,:email,:password,:mobile_number,:status)";
+            $sql = "INSERT INTO t_movies (
+                      r_movie_category_id,
+                      name,
+                      release_date,
+                      actor,
+                      actress,
+                      producer,
+                      director,
+                      duration,
+                      description,
+                      banner_image,
+                      list_image
+                    ) 
+                    VALUES (
+                            :r_movie_category_id,
+                            :name,
+                            :release_date,
+                            :actor,
+                            :actress,
+                            :producer,
+                            :director,
+                            :duration,
+                            :description,
+                            :banner_image,
+                            :list_image
+                            )";
             $stmt= DB::getConnection()->prepare($sql);
             $stmt->execute([
-                ':r_role_id'=>$data['userRole'],
-                ':name'=>$data['userName'],
-                ':email'=>$data['userEmail'],
-                ':password'=>$data['userMobile'],
-                ':mobile_number'=>$data['userPassword'],
-                ':status'=>$data['userStatus']
+                ':r_movie_category_id'=>$data['movieCategory'],
+                ':name'=>$data['movieName'],
+                ':release_date'=>$data['movieRelesedOn'],
+                ':actor'=>$data['movieActor'],
+                ':actress'=>$data['movieActress'],
+                ':producer'=>$data['movieProducer'],
+                ':director'=>$data['movieDirector'],
+                ':duration'=>$data['movieDuration'],
+                ':description'=>$data['movieDescription'],
+                ':banner_image'=>$data['movieBannerImage'],
+                ':list_image'=>$data['movieListImage']
             ]);
         } catch (Throwable $e){
             dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());

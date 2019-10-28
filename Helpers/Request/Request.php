@@ -4,6 +4,10 @@ use Sessions\Session;
 
 class Request extends Session implements IRequest
 {
+    public $GET = [];
+    public $POST = [];
+    public $FILES = [];
+
     /**
      * Request constructor.
      */
@@ -13,6 +17,25 @@ class Request extends Session implements IRequest
         {
             $this->{$this->toCamelCase($key)} = $value;
         }
+
+        if ($this->requestMethod === "GET"){
+            foreach ($_GET as $key => $value){
+                $this->$key = $value;
+            }
+            $this->GET = $_GET;
+        }
+
+        if ($this->requestMethod === "POST"){
+            foreach ($_POST as $key => $value){
+                $this->$key = $value;
+            }
+            $this->POST;
+        }
+
+        foreach ($_FILES as $key => $value){
+            $this->$key = $value;
+        }
+        $this->FILES = $_FILES;
     }
 
     /**
@@ -50,7 +73,6 @@ class Request extends Session implements IRequest
     {
         if($this->requestMethod === "GET")
         {
-            $body = array();
             foreach($_GET as $key => $value)
             {
                 $body[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
@@ -67,4 +89,5 @@ class Request extends Session implements IRequest
             return $body;
         }
     }
+
 }

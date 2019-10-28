@@ -21,7 +21,7 @@ class MovieController
     }
 
     public function movieIndex(){
-        try{
+        try {
             $movies = Movie::all();
             export('backend/movies/view_all',$movies);
         } catch (Throwable $e) {
@@ -41,6 +41,8 @@ class MovieController
     public function movieStore(Request $request){
         try {
             $formData = $request->getBody();
+            $formData['movieBannerImage'] = imageUpload($request->FILES['movieBannerImage']);
+            $formData['movieListImage'] = imageUpload($request->FILES['movieListImage']);
             Movie::insert($formData);
             redirect('/movieIndex');
         } catch (Throwable $e) {

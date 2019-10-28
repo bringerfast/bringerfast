@@ -6,66 +6,105 @@
 <body class="app sidebar-mini">
 <?php view('backend/partial/nav_bar.php') ?>
 <?php view('backend/partial/side_bar.php') ?>
-<?php $roles = import() ?>
+<?php $movieCategories = import() ?>
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-dashboard"></i> Users</h1>
-            <p>Create User</p>
+            <h1><i class="fa fa-dashboard"></i> Movies</h1>
+            <p>Create Movie</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item"><a href="#">user / create </a></li>
+            <li class="breadcrumb-item"><a href="#">Movies / create </a></li>
         </ul>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <span class="pull-left">Create User</span>
-                    <a href="<?php echo baseURL().'/userIndex'; ?>" class="fa fa-list pull-right text-success" title="View All"></a>
+                    <span class="pull-left">Create Movie</span>
+                    <a href="<?php echo baseURL().'/movieIndex'; ?>" class="fa fa-list pull-right text-success" title="View All"></a>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="<?php echo baseURL().'/userStore' ?>">
+                    <form method="post" action="<?php echo baseURL().'/movieStore' ?>" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6">
-                                <select class="form-control" name="userRole" required>
-                                    <option disabled selected>Select Role</option>
-                                    <?php foreach ($roles as $role){ ?>
-                                        <option value="<?php echo $role['role_id']?>"><?php echo $role['role_name']; ?></option>
-                                    <?php } ?>
-                                </select>
+                                <div class="form-group">
+                                    <select class="form-control" name="movieCategory" required>
+                                        <option disabled selected>Select Movie Category</option>
+                                        <?php foreach ($movieCategories as $movieCategory){ ?>
+                                            <option value="<?php echo $movieCategory['movie_category_id']?>"><?php echo $movieCategory['movie_category_name']; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userName" placeholder="Enter User Name" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="movieName" placeholder="Enter Movie Name" required>
+                                </div>
                             </div>
-                        </div><hr>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userEmail" placeholder="Enter User Email" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="date" name="movieRelesedOn" placeholder="Enter Movie Release Date" required>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userMobile" placeholder="Enter User Mobile" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="movieActor" placeholder="Enter Movie Actor" required>
+                                </div>
                             </div>
-                        </div><hr>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userPassword" placeholder="Enter User Password" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="movieActress" placeholder="Enter Movie Actress" required>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="usercPassword" placeholder="Enter User Confirm Password" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="movieProducer" placeholder="Enter Movie Producer" required>
+                                </div>
                             </div>
-                        </div><hr>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <select class="form-control" name="userStatus" required>
-                                    <option disabled selected>Select Status</option>
-                                    <option value="1">Active</option>
-                                    <option value="0">Suspend</option>
-                                </select>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="movieDirector" placeholder="Enter Director of movie" required>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control btn btn-outline-primary" type="submit" value="Create New User" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="time" name="movieDuration" placeholder="Enter Movie Duration" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea id="ckEditor" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" type="file" name="movieBannerImage" placeholder="choose Banner images" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" type="file" name="movieListImage" placeholder="choose List image" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control btn btn-sm btn-success" type="submit">
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -78,5 +117,8 @@
     </div>
 </main>
 <?php view('backend/partial/foot_links.php') ?>
+<script>
+    CKEDITOR.replace( 'ckEditor' );
+</script>
 </body>
 </html>
