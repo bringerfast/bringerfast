@@ -11,6 +11,7 @@ namespace Controllers;
 
 use Models\Role;
 use Request\Request;
+use Throwable;
 
 class RoleController
 {
@@ -20,41 +21,69 @@ class RoleController
     }
 
     public function roleIndex(){
-        $roles = Role::all();
-        export('backend/roles/view_all',$roles);
+        try {
+            $roles = Role::all();
+            export('backend/roles/view_all',$roles);
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 
     public function roleForm(){
-        export('backend/roles/create_form','');
+        try {
+            export('backend/roles/create_form','');
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 
     public function roleStore(Request $request){
-        $formData = $request->getBody();
-        Role::insert($formData);
-        redirect('/roleIndex');
+       try {
+           $formData = $request->getBody();
+           Role::insert($formData);
+           redirect('/roleIndex');
+       } catch (Throwable $e) {
+           dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+       }
     }
 
     public function roleShow(Request $request){
-        $formData = $request->getBody();
-        $role = Role::select($formData['role_id']);
-        export('backend/roles/show',$role);
+        try {
+            $formData = $request->getBody();
+            $role = Role::select($formData['role_id']);
+            export('backend/roles/show',$role);
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 
     public function roleEditForm(Request $request){
-        $formData = $request->getBody();
-        $role = Role::select($formData['role_id']);
-        export('backend/roles/edit_form',$role);
+        try {
+            $formData = $request->getBody();
+            $role = Role::select($formData['role_id']);
+            export('backend/roles/edit_form',$role);
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 
     public function roleUpdate(Request $request){
-       $formData = $request->getBody();
-       Role::update($formData);
-       redirect('/roleIndex');
+       try {
+           $formData = $request->getBody();
+           Role::update($formData);
+           redirect('/roleIndex');
+       } catch (Throwable $e) {
+           dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+       }
     }
 
     public function roleDelete(Request $request){
-        $formData = $request->getBody();
-        Role::delete($formData['role_id']);
-        redirect('/roleIndex');
+        try {
+            $formData = $request->getBody();
+            Role::delete($formData['role_id']);
+            redirect('/roleIndex');
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 }

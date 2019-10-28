@@ -76,21 +76,21 @@ class Movie
         }
     }
 
-    public static function select($user_id){
+    public static function select($movie_id){
         try{
             $stmt = DB::getConnection()->prepare(" 
               SELECT 
-                  users.r_role_id, 
-                  users.*,
-                  roles.* 
+                  movies.r_movie_category_id, 
+                  movies.*,
+                  movies.* 
               FROM 
-                  t_users as users
+                  t_movies as movies
               INNER JOIN 
-                  t_roles as roles
-                  ON roles.role_id = users.r_role_id
-              WHERE user_id = :user_id LIMIT 1"
+                  t_movie_categories as movie_categories
+                  ON movie_categories.movie_category_id = movies.r_movie_category_id
+              WHERE movie_id = :movie_id LIMIT 1"
             );
-            $stmt->execute([':user_id' => $user_id]);
+            $stmt->execute([':movie_id' => $movie_id]);
             return $stmt->fetch();
         } catch (Throwable $e){
             dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -100,40 +100,50 @@ class Movie
     public static function update($data){
         try{
             $sql = "UPDATE 
-                        t_users 
+                      t_movies 
                     SET 
-                        r_role_id =:r_role_id, 
-                        name =:name,
-                        email =:email,
-                        mobile =:mobile,
-                        password =:password,
-                        status =:status
+                      r_movie_category_id,
+                      name,
+                      release_date,
+                      actor,
+                      actress,
+                      producer,
+                      director,
+                      duration,
+                      description,
+                      banner_image,
+                      list_image
                     WHERE 
-                        user_id =:user_id
+                      movie_id =:movie_id
                     ";
             $stmt= DB::getConnection()->prepare($sql);
             $stmt->execute([
-                ':r_role_id'=>$data['userRole'],
-                ':name'=>$data['userName'],
-                ':email'=>$data['userEmail'],
-                ':mobile'=>$data['userMobile'],
-                ':password'=>$data['userPassword'],
-                ':status'=>$data['userStatus'],
-                ':user_id'=>$data['userId'],
+                ':r_movie_category_id'=>$data['movieCategory'],
+                ':name'=>$data['movieName'],
+                ':release_date'=>$data['movieRelesedOn'],
+                ':actor'=>$data['movieActor'],
+                ':actress'=>$data['movieActress'],
+                ':producer'=>$data['movieProducer'],
+                ':director'=>$data['movieDirector'],
+                ':duration'=>$data['movieDuration'],
+                ':description'=>$data['movieDescription'],
+                ':banner_image'=>$data['movieBannerImage'],
+                ':list_image'=>$data['movieListImage'],
+                ':movie_id' => $data['movie_id']
             ]);
         } catch (Throwable $e){
             dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
-    public static function delete($user_id){
+    public static function delete($movie_id){
         try{
             $sql = 'DELETE FROM 
-                        t_users 
+                        t_movies 
                     WHERE 
-                        user_id = :user_id';
+                        movie_id = :movie_id';
             $q = DB::getConnection()->prepare($sql);
-            $q->execute([':user_id' => $user_id]);
+            $q->execute([':movie_id' => $movie_id]);
         } catch (Throwable $e){
             dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }

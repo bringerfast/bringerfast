@@ -11,6 +11,7 @@ namespace Controllers;
 
 use Models\MovieCategory;
 use Request\Request;
+use Throwable;
 
 class MovieCategoryController
 {
@@ -20,41 +21,69 @@ class MovieCategoryController
     }
 
     public function movieCategoryIndex(){
-        $movieCategories = MovieCategory::all();
-        export('backend/movie_categories/view_all',$movieCategories);
+        try {
+            $movieCategories = MovieCategory::all();
+            export('backend/movie_categories/view_all',$movieCategories);
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 
     public function movieCategoryForm(){
-        export('backend/movie_categories/create_form','');
+        try {
+            export('backend/movie_categories/create_form','');
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 
     public function movieCategoryStore(Request $request){
-        $formData = $request->getBody();
-        MovieCategory::insert($formData);
-        redirect('/movieCategoryIndex');
+       try {
+           $formData = $request->getBody();
+           MovieCategory::insert($formData);
+           redirect('/movieCategoryIndex');
+       } catch (Throwable $e) {
+           dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+       }
     }
 
     public function movieCategoryShow(Request $request){
-        $formData = $request->getBody();
-        $movieCategory = MovieCategory::select($formData['movie_category_id']);
-        export('backend/movie_categories/show',$movieCategory);
+        try {
+            $formData = $request->getBody();
+            $movieCategory = MovieCategory::select($formData['movie_category_id']);
+            export('backend/movie_categories/show',$movieCategory);
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 
     public function movieCategoryEditForm(Request $request){
-        $formData = $request->getBody();
-        $movieCategory = MovieCategory::select($formData['movie_category_id']);
-        export('backend/movie_categories/edit_form',$movieCategory);
+        try {
+            $formData = $request->getBody();
+            $movieCategory = MovieCategory::select($formData['movie_category_id']);
+            export('backend/movie_categories/edit_form',$movieCategory);
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 
     public function movieCategoryUpdate(Request $request){
-        $formData = $request->getBody();
-        MovieCategory::update($formData);
-        redirect('/movieCategoryIndex');
+        try {
+            $formData = $request->getBody();
+            MovieCategory::update($formData);
+            redirect('/movieCategoryIndex');
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 
     public function movieCategoryDelete(Request $request){
-        $formData = $request->getBody();
-        MovieCategory::delete($formData['movie_category_id']);
-        redirect('/movieCategoryIndex');
+        try {
+            $formData = $request->getBody();
+            MovieCategory::delete($formData['movie_category_id']);
+            redirect('/movieCategoryIndex');
+        } catch (Throwable $e) {
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
     }
 }

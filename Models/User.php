@@ -2,7 +2,7 @@
 namespace Models;
 
 use Connection\DB;
-use PDOException;
+use Throwable;
 
 class User
 {
@@ -17,30 +17,24 @@ class User
               ON users.r_role_id = roles.role_id
               WHERE email=:email AND password=:password AND users.r_role_id = roles.role_id LIMIT 1
           ");
-            $result = $stmt->execute(['email' => $email,'password' => $password]);
-            if (!$result){
-                throwError('Error notified from User model at line :'.__LINE__);
-            }
-            return $stmt->fetch();
-        } catch (PDOException $e){
-            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
+          $stmt->execute(['email' => $email,'password' => $password]);
+          return $stmt->fetch();
+        } catch (Throwable $e){
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
     public static function all(){
         try{
             $stmt = DB::getConnection()->prepare("SELECT * FROM t_users");
-            $result = $stmt->execute();
-            if (!$result){
-                throwError('Error notified from User model at line :'.__LINE__);
-            }
+            $stmt->execute();
             $AllRows = [];
             while ($row = $stmt->fetch()){
                 $AllRows[] = $row;
             }
             return $AllRows;
-        } catch (PDOException $e){
-            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
+        } catch (Throwable $e){
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -49,7 +43,7 @@ class User
             $sql = "INSERT INTO t_users (r_role_id,name,email,password,mobile,status) 
                     VALUES (:r_role_id,:name,:email,:password,:mobile_number,:status)";
             $stmt= DB::getConnection()->prepare($sql);
-            $result = $stmt->execute([
+            $stmt->execute([
                 ':r_role_id'=>$data['userRole'],
                 ':name'=>$data['userName'],
                 ':email'=>$data['userEmail'],
@@ -57,11 +51,8 @@ class User
                 ':mobile_number'=>$data['userPassword'],
                 ':status'=>$data['userStatus']
             ]);
-            if (!$result){
-                throwError('Error notified from User model at line :'.__LINE__);
-            }
-        } catch (PDOException $e){
-            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
+        } catch (Throwable $e){
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -79,13 +70,10 @@ class User
                   ON roles.role_id = users.r_role_id
               WHERE user_id = :user_id LIMIT 1"
             );
-            $result = $stmt->execute([':user_id' => $user_id]);
-            if (!$result){
-                throwError('Error notified from User model at line :'.__LINE__);
-            }
+            $stmt->execute([':user_id' => $user_id]);
             return $stmt->fetch();
-        } catch (PDOException $e){
-            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
+        } catch (Throwable $e){
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -104,7 +92,7 @@ class User
                         user_id =:user_id
                     ";
             $stmt= DB::getConnection()->prepare($sql);
-            $result = $stmt->execute([
+            $stmt->execute([
                 ':r_role_id'=>$data['userRole'],
                 ':name'=>$data['userName'],
                 ':email'=>$data['userEmail'],
@@ -113,11 +101,8 @@ class User
                 ':status'=>$data['userStatus'],
                 ':user_id'=>$data['userId'],
             ]);
-            if (!$result){
-                throwError('Error notified from User model at line :'.__LINE__);
-            }
-        } catch (PDOException $e){
-            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
+        } catch (Throwable $e){
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -128,12 +113,9 @@ class User
                     WHERE 
                         user_id = :user_id';
             $q = DB::getConnection()->prepare($sql);
-            $result =  $q->execute([':user_id' => $user_id]);
-            if (!$result){
-                throwError('Error notified from User model at line :'.__LINE__);
-            }
-        } catch (PDOException $e){
-            throwError("Error notified from User at line :".__LINE__."<br>".$e->getMessage());
+            $q->execute([':user_id' => $user_id]);
+        } catch (Throwable $e){
+            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }
