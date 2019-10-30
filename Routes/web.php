@@ -56,6 +56,15 @@ Route::get('/classTypeEditForm', 'ClassTypeController@classTypeEditForm');
 Route::post('/classTypeUpdate', 'ClassTypeController@classTypeUpdate');
 Route::get('/classTypeDelete', 'ClassTypeController@classTypeDelete');
 
+# Show Type CRUD
+Route::get('/showIndex', 'ShowController@showIndex');
+Route::get('/showForm', 'ShowController@showForm');
+Route::post('/showStore', 'ShowController@showStore');
+Route::get('/showShow', 'ShowController@showShow');
+Route::get('/showEditForm', 'ShowController@showEditForm');
+Route::post('/showUpdate', 'ShowController@showUpdate');
+Route::get('/showDelete', 'ShowController@showDelete');
+
 
 
 
