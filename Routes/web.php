@@ -47,6 +47,15 @@ Route::get('/movieEditForm', 'MovieController@movieEditForm');
 Route::post('/movieUpdate', 'MovieController@movieUpdate');
 Route::get('/movieDelete', 'MovieController@movieDelete');
 
+# Class Type CRUD
+Route::get('/classTypeIndex', 'ClassTypeController@classTypeIndex');
+Route::get('/classTypeForm', 'ClassTypeController@classTypeForm');
+Route::post('/classTypeStore', 'ClassTypeController@classTypeStore');
+Route::get('/classTypeShow', 'ClassTypeController@classTypeShow');
+Route::get('/classTypeEditForm', 'ClassTypeController@classTypeEditForm');
+Route::post('/classTypeUpdate', 'ClassTypeController@classTypeUpdate');
+Route::get('/classTypeDelete', 'ClassTypeController@classTypeDelete');
+
 
 
 
