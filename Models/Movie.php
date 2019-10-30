@@ -10,7 +10,6 @@ namespace Models;
 
 
 use Connection\DB;
-use function MongoDB\BSON\toJSON;
 use Throwable;
 
 class Movie
@@ -67,7 +66,7 @@ class Movie
                 ':producer'=>$data['movieProducer'],
                 ':director'=>$data['movieDirector'],
                 ':duration'=>$data['movieDuration'],
-                ':description'=>$data['movieDescription'],
+                ':description' => $data['movieDescription'],
                 ':banner_image'=>$data['movieBannerImage'],
                 ':list_image'=>$data['movieListImage']
             ]);
@@ -102,17 +101,17 @@ class Movie
             $sql = "UPDATE 
                       t_movies 
                     SET 
-                      r_movie_category_id,
-                      name,
-                      release_date,
-                      actor,
-                      actress,
-                      producer,
-                      director,
-                      duration,
-                      description,
-                      banner_image,
-                      list_image
+                      r_movie_category_id=:r_movie_category_id,
+                      name=:name,
+                      release_date=:release_date,
+                      actor=:actor,
+                      actress=:actress,
+                      producer=:producer,
+                      director=:director,
+                      duration=:duration,
+                      description=:description,
+                      banner_image=:banner_image,
+                      list_image=:list_image
                     WHERE 
                       movie_id =:movie_id
                     ";
@@ -129,7 +128,7 @@ class Movie
                 ':description'=>$data['movieDescription'],
                 ':banner_image'=>$data['movieBannerImage'],
                 ':list_image'=>$data['movieListImage'],
-                ':movie_id' => $data['movie_id']
+                ':movie_id' => $data['movieId']
             ]);
         } catch (Throwable $e){
             dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());

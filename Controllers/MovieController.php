@@ -74,6 +74,20 @@ class MovieController
     public function movieUpdate(Request $request){
         try {
             $formData = $request->getBody();
+            $movie = Movie::select($formData['movieId']);
+            if ($request->FILES['movieBannerImage']['name']=="" && $request->FILES['movieListImage']['name']!=""){
+                $formData['movieBannerImage'] = $movie['banner_image'];
+                $formData['movieListImage'] = imageUpload($request->FILES['movieListImage']);
+            } else if ($request->FILES['movieBannerImage']['name']!="" && $request->FILES['movieListImage']['name']==""){
+                $formData['movieBannerImage'] = imageUpload($request->FILES['movieBannerImage']);
+                $formData['movieListImage'] = $movie['list_image'];
+            } else if ($request->FILES['movieBannerImage']['name']!="" && $request->FILES['movieListImage']['name']!="") {
+                $formData['movieBannerImage'] = imageUpload($request->FILES['movieBannerImage']);
+                $formData['movieListImage'] = imageUpload($request->FILES['movieListImage']);
+            } else {
+                $formData['movieBannerImage'] = $movie['banner_image'];
+                $formData['movieListImage'] = $movie['list_image'];
+            }
             Movie::update($formData);
             redirect('/movieIndex');
         } catch (Throwable $e) {

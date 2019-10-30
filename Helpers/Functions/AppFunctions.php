@@ -55,7 +55,7 @@ function baseURL(){
 
 function imageUpload($image){
     $target_dir = basePath()."/Assets/uploads/images/";
-    $file_name = time()."_".basename($image["name"]);
+    $file_name = time()."_".rand(1111111111,9999999999)."_".basename($image["name"]);
     $target_file = $target_dir . $file_name;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     // Check if image file is a actual image or fake image

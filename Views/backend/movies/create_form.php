@@ -83,7 +83,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <textarea id="ckEditor" class="form-control"></textarea>
+                                    <textarea id="ckEditor" class="form-control" name="movieDescription"></textarea>
                                 </div>
                             </div>
                         </div>
