@@ -65,6 +65,15 @@ Route::get('/showEditForm', 'ShowController@showEditForm');
 Route::post('/showUpdate', 'ShowController@showUpdate');
 Route::get('/showDelete', 'ShowController@showDelete');
 
+# Theatres CRUD
+Route::get('/theatreIndex', 'TheatreController@theatreIndex');
+Route::get('/theatreForm', 'TheatreController@theatreForm');
+Route::post('/theatreStore', 'TheatreController@theatreStore');
+Route::get('/theatreShow', 'TheatreController@theatreShow');
+Route::get('/theatreEditForm', 'TheatreController@theatreEditForm');
+Route::post('/theatreUpdate', 'TheatreController@theatreUpdate');
+Route::get('/theatreDelete', 'TheatreController@theatreDelete');
+
 
 
 
