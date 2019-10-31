@@ -20,7 +20,7 @@ class User
           $stmt->execute(['email' => $email,'password' => $password]);
           return $stmt->fetch();
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -34,7 +34,7 @@ class User
             }
             return $AllRows;
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -52,7 +52,7 @@ class User
                 ':status'=>$data['userStatus']
             ]);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -73,7 +73,7 @@ class User
             $stmt->execute([':user_id' => $user_id]);
             return $stmt->fetch();
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -102,7 +102,7 @@ class User
                 ':user_id'=>$data['userId'],
             ]);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -115,7 +115,7 @@ class User
             $q = DB::getConnection()->prepare($sql);
             $q->execute([':user_id' => $user_id]);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

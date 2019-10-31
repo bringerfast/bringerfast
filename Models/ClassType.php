@@ -26,7 +26,7 @@ class ClassType
             }
             return $AllRows;
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -37,7 +37,7 @@ class ClassType
             $stmt->execute([$data['classTypeName']]);
             return true;
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -47,7 +47,7 @@ class ClassType
             $stmt->execute([':class_type_id' => $class_type_id]);
             return $stmt->fetch();
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -57,7 +57,7 @@ class ClassType
             $stmt= DB::getConnection()->prepare($sql);
             $stmt->execute([':class_type_name'=>$data['classTypeName'],':class_type_id'=>$data['classTypeId']]);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -67,7 +67,7 @@ class ClassType
             $stmt = DB::getConnection()->prepare($sql);
             $stmt->execute([':class_type_id' => $class_type_id]);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

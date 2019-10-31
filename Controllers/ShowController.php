@@ -25,7 +25,7 @@ class ShowController
             $shows = Show::all();
             export('backend/shows/view_all',$shows);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -33,7 +33,7 @@ class ShowController
         try {
             export('backend/shows/create_form','');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -43,7 +43,7 @@ class ShowController
             Show::insert($formData);
             redirect('/showIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -53,7 +53,7 @@ class ShowController
             $show = Show::select($formData['show_id']);
             export('backend/shows/show',$show);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -63,7 +63,7 @@ class ShowController
             $show = Show::select($formData['show_id']);
             export('backend/shows/edit_form',$show);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -73,7 +73,7 @@ class ShowController
             Show::update($formData);
             redirect('/showIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -83,7 +83,7 @@ class ShowController
             Show::delete($formData['show_id']);
             redirect('/showIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

@@ -25,7 +25,7 @@ class MovieController
             $movies = Movie::all();
             export('backend/movies/view_all',$movies);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -34,7 +34,7 @@ class MovieController
             $movieCategories = MovieCategory::all();
             export('backend/movies/create_form',$movieCategories);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -46,7 +46,7 @@ class MovieController
             Movie::insert($formData);
             redirect('/movieIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -56,7 +56,7 @@ class MovieController
             $movie = Movie::select($formData['movie_id']);
             export('backend/movies/show',$movie);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -67,7 +67,7 @@ class MovieController
             $movieCategories = MovieCategory::all();
             export('backend/movies/edit_form',[$movie,$movieCategories]);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -91,7 +91,7 @@ class MovieController
             Movie::update($formData);
             redirect('/movieIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -101,7 +101,7 @@ class MovieController
             Movie::delete($formData['movie_id']);
             redirect('/movieIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

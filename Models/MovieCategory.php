@@ -27,7 +27,7 @@ class MovieCategory
             }
             return $AllRows;
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -38,7 +38,7 @@ class MovieCategory
             $stmt->execute([$data['movieCategoryName']]);
             return true;
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -48,7 +48,7 @@ class MovieCategory
             $stmt->execute([':movie_category_id' => $movie_category_id]);
             return $stmt->fetch();
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -58,7 +58,7 @@ class MovieCategory
             $stmt= DB::getConnection()->prepare($sql);
             $stmt->execute([':movie_category_name'=>$data['movieCategoryName'],':movie_category_id'=>$data['movieCategoryId']]);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -68,7 +68,7 @@ class MovieCategory
             $stmt = DB::getConnection()->prepare($sql);
             $stmt->execute([':movie_category_id' => $movie_category_id]);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

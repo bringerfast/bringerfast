@@ -27,7 +27,7 @@ class Role
             }
             return $AllRows;
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -38,7 +38,7 @@ class Role
             $stmt->execute([$data['roleName']]);
             return true;
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -48,7 +48,7 @@ class Role
             $stmt->execute([':role_id' => $role_id]);
             return $stmt->fetch();
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -58,7 +58,7 @@ class Role
             $stmt= DB::getConnection()->prepare($sql);
             $stmt->execute([':role_name'=>$data['roleName'],':role_id'=>$data['roleId']]);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -68,7 +68,7 @@ class Role
             $stmt = DB::getConnection()->prepare($sql);
             $stmt->execute([':role_id' => $role_id]);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

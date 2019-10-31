@@ -13,7 +13,7 @@ use Throwable;
 class Theatre
 {
     private $table = 't_theatres';
-    private $fields = ['theatre_id','r_user_id','theatre_name','address','contact'];
+    private $fields = ['theatre_id','r_user_id','theatre_name','athrowErrorress','contact'];
 
     public static function all(){
         try{
@@ -25,23 +25,23 @@ class Theatre
             }
             return $AllRows;
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
     public static function insert($data){
         try{
-            $sql = "INSERT INTO t_theatres (r_user_id,theatre_name,address,contact) 
-                    VALUES (:r_user_id,:theatre_name,:address,:contact)";
+            $sql = "INSERT INTO t_theatres (r_user_id,theatre_name,athrowErrorress,contact) 
+                    VALUES (:r_user_id,:theatre_name,:athrowErrorress,:contact)";
             $stmt= DB::getConnection()->prepare($sql);
             $stmt->execute([
                 ':r_user_id'=>$data['userId'],
                 ':theatre_name'=>$data['theatreName'],
-                ':address'=>$data['theatreAddress'],
+                ':athrowErrorress'=>$data['theatreAthrowErrorress'],
                 ':contact'=>$data['theatreContact']
             ]);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -62,7 +62,7 @@ class Theatre
             $stmt->execute([':theatre_id' => $theatre_id]);
             return $stmt->fetch();
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -73,7 +73,7 @@ class Theatre
                     SET 
                         r_user_id =:r_user_id, 
                         theatre_name =:theatre_name,
-                        address =:address,
+                        athrowErrorress =:athrowErrorress,
                         contact =:contact
                     WHERE 
                         theatre_id =:theatre_id
@@ -82,12 +82,12 @@ class Theatre
             $stmt->execute([
                 ':r_user_id'=>$data['userId'],
                 ':theatre_name'=>$data['theatreName'],
-                ':address'=>$data['theatreAddress'],
+                ':athrowErrorress'=>$data['theatreAthrowErrorress'],
                 ':contact'=>$data['theatreContact'],
                 ':theatre_id'=>$data['theatreId'],
             ]);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -100,7 +100,7 @@ class Theatre
             $q = DB::getConnection()->prepare($sql);
             $q->execute([':theatre_id' => $theatre_id]);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

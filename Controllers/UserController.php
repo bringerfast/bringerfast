@@ -18,7 +18,7 @@ class UserController
             $users = User::all();
             export('backend/users/view_all',$users);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -27,7 +27,7 @@ class UserController
             $roles = Role::all();
             export('backend/users/create_form',$roles);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -37,7 +37,7 @@ class UserController
             User::insert($formData);
             redirect('/userIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -47,7 +47,7 @@ class UserController
             $user = User::select($formData['user_id']);
             export('backend/users/show',$user);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -58,7 +58,7 @@ class UserController
             $roles = Role::all();
             export('backend/users/edit_form',[$user,$roles]);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -68,7 +68,7 @@ class UserController
             User::update($formData);
             redirect('/userIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -78,7 +78,7 @@ class UserController
             User::delete($formData['user_id']);
             redirect('/userIndex');
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

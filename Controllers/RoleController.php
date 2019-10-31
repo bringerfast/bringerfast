@@ -25,7 +25,7 @@ class RoleController
             $roles = Role::all();
             export('backend/roles/view_all',$roles);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -33,7 +33,7 @@ class RoleController
         try {
             export('backend/roles/create_form','');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -43,7 +43,7 @@ class RoleController
            Role::insert($formData);
            redirect('/roleIndex');
        } catch (Throwable $e) {
-           dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+           throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
        }
     }
 
@@ -53,7 +53,7 @@ class RoleController
             $role = Role::select($formData['role_id']);
             export('backend/roles/show',$role);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -63,7 +63,7 @@ class RoleController
             $role = Role::select($formData['role_id']);
             export('backend/roles/edit_form',$role);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -73,7 +73,7 @@ class RoleController
            Role::update($formData);
            redirect('/roleIndex');
        } catch (Throwable $e) {
-           dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+           throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
        }
     }
 
@@ -83,7 +83,7 @@ class RoleController
             Role::delete($formData['role_id']);
             redirect('/roleIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

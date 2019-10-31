@@ -25,7 +25,7 @@ class ScreenController
             $screens = Screen::all();
             export('backend/screens/view_all',$screens);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -35,7 +35,7 @@ class ScreenController
             $classTypes = ClassType::all();
             export('backend/screens/create_form',[$theatres,$classTypes]);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -45,7 +45,7 @@ class ScreenController
             Screen::insert($formData);
             redirect('/screenIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -55,7 +55,7 @@ class ScreenController
             $screen = Screen::select($formData['screen_id']);
             export('backend/screens/show',$screen);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -67,7 +67,7 @@ class ScreenController
             $classTypes = ClassType::all();
             export('backend/screens/edit_form',[$screen,$theatres,$classTypes]);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -77,7 +77,7 @@ class ScreenController
             Screen::update($formData);
             redirect('/screenIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -87,7 +87,7 @@ class ScreenController
             Screen::delete($formData['screen_id']);
             redirect('/screenIndex');
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

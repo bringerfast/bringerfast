@@ -25,7 +25,7 @@ class MovieCategoryController
             $movieCategories = MovieCategory::all();
             export('backend/movie_categories/view_all',$movieCategories);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -33,7 +33,7 @@ class MovieCategoryController
         try {
             export('backend/movie_categories/create_form','');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -43,7 +43,7 @@ class MovieCategoryController
            MovieCategory::insert($formData);
            redirect('/movieCategoryIndex');
        } catch (Throwable $e) {
-           dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+           throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
        }
     }
 
@@ -53,7 +53,7 @@ class MovieCategoryController
             $movieCategory = MovieCategory::select($formData['movie_category_id']);
             export('backend/movie_categories/show',$movieCategory);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -63,7 +63,7 @@ class MovieCategoryController
             $movieCategory = MovieCategory::select($formData['movie_category_id']);
             export('backend/movie_categories/edit_form',$movieCategory);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -73,7 +73,7 @@ class MovieCategoryController
             MovieCategory::update($formData);
             redirect('/movieCategoryIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -83,7 +83,7 @@ class MovieCategoryController
             MovieCategory::delete($formData['movie_category_id']);
             redirect('/movieCategoryIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

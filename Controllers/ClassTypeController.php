@@ -23,7 +23,7 @@ class ClassTypeController
             $classTypes = ClassType::all();
             export('backend/class_types/view_all',$classTypes);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -31,7 +31,7 @@ class ClassTypeController
         try {
             export('backend/class_types/create_form','');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -41,7 +41,7 @@ class ClassTypeController
             ClassType::insert($formData);
             redirect('/classTypeIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -51,7 +51,7 @@ class ClassTypeController
             $classType = ClassType::select($formData['class_type_id']);
             export('backend/class_types/show',$classType);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -61,7 +61,7 @@ class ClassTypeController
             $classType = ClassType::select($formData['class_type_id']);
             export('backend/class_types/edit_form',$classType);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -71,7 +71,7 @@ class ClassTypeController
             ClassType::update($formData);
             redirect('/classTypeIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -81,7 +81,7 @@ class ClassTypeController
             ClassType::delete($formData['class_type_id']);
             redirect('/classTypeIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }

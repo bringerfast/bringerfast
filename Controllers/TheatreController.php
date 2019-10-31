@@ -25,7 +25,7 @@ class TheatreController
             $theatres = Theatre::all();
             export('backend/theatres/view_all',$theatres);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -34,7 +34,7 @@ class TheatreController
             $users = User::all();
             export('backend/theatres/create_form',$users);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -44,7 +44,7 @@ class TheatreController
             Theatre::insert($formData);
             redirect('/theatreIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -54,7 +54,7 @@ class TheatreController
             $theatre = Theatre::select($formData['theatre_id']);
             export('backend/theatres/show',$theatre);
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -65,7 +65,7 @@ class TheatreController
             $users = User::all();
             export('backend/theatres/edit_form',[$theatre,$users]);
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -75,7 +75,7 @@ class TheatreController
             Theatre::update($formData);
             redirect('/theatreIndex');
         } catch (Throwable $e) {
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 
@@ -85,7 +85,7 @@ class TheatreController
             Theatre::delete($formData['theatre_id']);
             redirect('/theatreIndex');
         } catch (Throwable $e){
-            dd($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
 }
