@@ -14927,6 +14927,20 @@ be a descendant of the grid when it is being dragged.
   padding-right: 15px;
 }
 
+.app-header-danger {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #cb161b;
+  z-index: 1030;
+  padding-right: 15px;
+}
+
 @media (min-width: 768px) {
   .app-header {
     padding-right: 30px;
