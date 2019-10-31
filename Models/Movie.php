@@ -14,6 +14,9 @@ use Throwable;
 
 class Movie
 {
+    private $table = 't_moives';
+    private $fields = ['movie_id','r_movie_category_id','name','release_date','actor','actress','director','duration','description','banner_image','list_image'];
+
     public static function all(){
         try{
             $stmt = DB::getConnection()->prepare("SELECT * FROM t_movies");
