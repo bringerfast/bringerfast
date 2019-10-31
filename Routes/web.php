@@ -74,6 +74,15 @@ Route::get('/theatreEditForm', 'TheatreController@theatreEditForm');
 Route::post('/theatreUpdate', 'TheatreController@theatreUpdate');
 Route::get('/theatreDelete', 'TheatreController@theatreDelete');
 
+# Screen CRUD
+Route::get('/screenIndex', 'ScreenController@screenIndex');
+Route::get('/screenForm', 'ScreenController@screenForm');
+Route::post('/screenStore', 'ScreenController@screenStore');
+Route::get('/screenShow', 'ScreenController@screenShow');
+Route::get('/screenEditForm', 'ScreenController@screenEditForm');
+Route::post('/screenUpdate', 'ScreenController@screenUpdate');
+Route::get('/screenDelete', 'ScreenController@screenDelete');
+
 
 
 

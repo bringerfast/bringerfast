@@ -10,6 +10,7 @@ namespace Models;
 
 use Connection\DB;
 use Throwable;
+
 class Show
 {
     private $table = 't_shows';

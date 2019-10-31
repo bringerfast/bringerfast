@@ -49,7 +49,7 @@ class LoginController
 
         $subject = "Send Test Email in PHP by BringerFast";
 
-        $htmlContent = 'Test Html Content';
+        $htmlContent = '<h1>Test Html Content</h1>';
 
         // Set content-type header for sending HTML email
         $headers = "MIME-Version: 1.0" . "\r\n";
