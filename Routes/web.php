@@ -5,11 +5,14 @@ Route::get('/',function (Request $request){
     export('welcome',[]);
 });
 
-# Super Admin Auth
-Route::get('/admin', 'LoginController@index');
+# Authentications
+Route::get('/superAdmin', 'LoginController@superAdminLoginForm');
+Route::post('/superAdmin', 'LoginController@superAdminLogin');
+Route::get('/admin', 'LoginController@adminLoginForm');
 Route::post('/admin', 'LoginController@adminLogin');
-Route::get('/adminLogout', 'LoginController@adminLogout');
 Route::post('/sendResetEmail','LoginController@sendResetEmail');
+Route::get('/logout', 'LoginController@logout');
+Route::get('/dashboard','DashboardController@dashboard');
 
 # Role CRUD
 Route::get('/roleIndex', 'RoleController@roleIndex');

@@ -112,8 +112,18 @@ function view($filename){
  * To verify Authentication
  */
 function auth($SessionKey){
-    if (!$_SESSION[$SessionKey]){
-        redirect('/');
+    if (is_array($SessionKey)){
+        $redirect = 1;
+        foreach ($SessionKey as $value){
+            if (isset($_SESSION[$value])){
+                $redirect = 0;
+            }
+        }
+        if ($redirect){
+            throwError('<center>Un Authorised Access!. Please Contact Administrator</center>');
+        }
+    } elseif (!isset($_SESSION[$SessionKey])){
+        throwError('<center>Un Authorised Access!. Please Contact Administrator</center>');
     }
 }
 

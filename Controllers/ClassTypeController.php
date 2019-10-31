@@ -15,7 +15,7 @@ class ClassTypeController
 {
     public function __construct()
     {
-        auth('SuperAdminData');
+        auth('SuperAdmin');
     }
 
     public function classTypeIndex(){

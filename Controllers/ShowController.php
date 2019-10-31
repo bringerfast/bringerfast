@@ -17,7 +17,7 @@ class ShowController
 {
     public function __construct()
     {
-        auth('SuperAdminData');
+        auth('SuperAdmin');
     }
 
     public function showIndex(){

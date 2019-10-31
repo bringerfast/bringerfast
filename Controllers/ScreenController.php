@@ -17,7 +17,7 @@ class ScreenController
 {
     public function __construct()
     {
-        auth('SuperAdminData');
+        auth('SuperAdmin');
     }
 
     public function screenIndex(){

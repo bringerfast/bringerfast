@@ -17,7 +17,7 @@ class TheatreController
 {
     public function __construct()
     {
-        auth('SuperAdminData');
+        auth('SuperAdmin');
     }
 
     public function theatreIndex(){

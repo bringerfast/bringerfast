@@ -10,11 +10,36 @@ use Request\Request;
 class LoginController
 {
 
-    public function index(Request $request){
-        if ($request->getSession('SuperAdminData')!=false){
-            export('backend/dashboard/dashboard',$request->getSession('SuperAdminData'));
+    public function superAdminLoginForm(Request $request){
+        if ($request->getSession('SuperAdmin')!=false){
+            redirect('/dashboard');
         } else {
-            export('backend/authentication/login','');
+            export('backend/authentication/superAdminLogin','');
+        }
+    }
+
+    public function superAdminLogin(Request $request)
+    {
+        $formData = $request->getBody();
+        $user = User::adminAuth($formData['userName'], $formData['userPassword']);
+        if ($user!=""){
+            if($user['role_name']=="SuperAdmin"){
+                $request->setSession("SuperAdmin",$user) ;
+                $request->setSession("CurrentUserData",$user) ;
+                redirect('/dashboard');
+            } else {
+                export('backend/authentication/superAdminLogin',['message'=>'Authentication Error!']);
+            }
+        } else {
+            export('backend/authentication/superAdminLogin',['message'=>'Authentication Error!']);
+        }
+    }
+
+    public function adminLoginForm(Request $request){
+        if ($request->getSession('Admin')!=false){
+            redirect('/dashboard');
+        } else {
+            export('backend/authentication/adminLogin','');
         }
     }
 
@@ -23,21 +48,28 @@ class LoginController
         $formData = $request->getBody();
         $user = User::adminAuth($formData['userName'], $formData['userPassword']);
         if ($user!=""){
-            if($user['role_name']=="SuperAdmin"){
-                $request->setSession("SuperAdminData",$user) ;
-                export('backend/dashboard/dashboard',$user);
+            if($user['role_name']=="Admin"){
+                $request->setSession("Admin",$user) ;
+                $request->setSession("CurrentUserData",$user) ;
+                redirect('/dashboard');
             } else {
-                throwError('Role SuperAdmin Not found in your t_roles table of your database<br>
-                                     Please add Role SuperAdmin manualy in t_role table of your database');
+                export('backend/authentication/adminLogin',['message'=>'Authentication Error!']);
             }
         } else {
-            export('backend/authentication/login',['message'=>'Authentication Error!']);
+            export('backend/authentication/adminLogin',['message'=>'Authentication Error!']);
         }
     }
 
-    public function adminLogout(Request $request){
+    public function logout(Request $request){
+        if ($request->getSession('SuperAdmin')!=false) {
+            $url = '/superAdmin';
+        } elseif ($request->getSession('Admin')!=false) {
+            $url = '/admin';
+        } else {
+            $url = '/';
+        }
         $request->sessionTruncate();
-        redirect('/admin');
+        redirect($url);
     }
 
     public function sendResetEmail(Request $request)

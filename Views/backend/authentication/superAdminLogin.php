@@ -25,7 +25,7 @@
                 echo '<center><span style="color: red;">'.$data['message'].'</span></center>';
             }
         ?>
-        <form class="login-form" method="post" action="<?php echo baseURL().'/admin'; ?>">
+        <form class="login-form" method="post" action="<?php echo baseURL().'/superAdmin'; ?>">
             <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
             <div class="form-group">
                 <label class="control-label">USERNAME</label>
