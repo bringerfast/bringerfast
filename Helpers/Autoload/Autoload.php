@@ -4,6 +4,9 @@ namespace Autoloader;
 
 class Autoload
 {
+    /**
+     * @param $dir
+     */
     public static function load($dir){
         $NameSpaces = [
             "Models\\" => "Models",

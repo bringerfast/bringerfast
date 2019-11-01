@@ -13,6 +13,9 @@ use Request\Request;
 use Throwable;
 class ClassTypeController
 {
+    /**
+     * ClassTypeController constructor.
+     */
     public function __construct()
     {
         auth('SuperAdmin');
@@ -27,6 +30,9 @@ class ClassTypeController
         }
     }
 
+    /**
+     *
+     */
     public function classTypeForm(){
         try {
             export('backend/class_types/create_form','');
@@ -35,6 +41,9 @@ class ClassTypeController
         }
     }
 
+    /**
+     * @param Request $request
+     */
     public function classTypeStore(Request $request){
         try {
             $formData = $request->getBody();
@@ -45,6 +54,9 @@ class ClassTypeController
         }
     }
 
+    /**
+     * @param Request $request
+     */
     public function classTypeShow(Request $request){
         try {
             $formData = $request->getBody();
@@ -55,6 +67,9 @@ class ClassTypeController
         }
     }
 
+    /**
+     * @param Request $request
+     */
     public function classTypeEditForm(Request $request){
         try {
             $formData = $request->getBody();
@@ -65,6 +80,9 @@ class ClassTypeController
         }
     }
 
+    /**
+     * @param Request $request
+     */
     public function classTypeUpdate(Request $request){
         try {
             $formData = $request->getBody();
@@ -75,6 +93,9 @@ class ClassTypeController
         }
     }
 
+    /**
+     * @param Request $request
+     */
     public function classTypeDelete(Request $request){
         try {
             $formData = $request->getBody();

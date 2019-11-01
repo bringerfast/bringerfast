@@ -1,6 +1,7 @@
 <?php
 
 
+
 namespace Controllers;
 
 
@@ -9,7 +10,9 @@ use Request\Request;
 
 class LoginController
 {
-
+    /**
+     * @param Request $request
+     */
     public function superAdminLoginForm(Request $request){
         if ($request->getSession('SuperAdmin')!=false){
             redirect('/dashboard');
@@ -18,6 +21,9 @@ class LoginController
         }
     }
 
+    /**
+     * @param Request $request
+     */
     public function superAdminLogin(Request $request)
     {
         $formData = $request->getBody();
@@ -35,6 +41,9 @@ class LoginController
         }
     }
 
+    /**
+     * @param Request $request
+     */
     public function adminLoginForm(Request $request){
         if ($request->getSession('Admin')!=false){
             redirect('/dashboard');
@@ -43,6 +52,9 @@ class LoginController
         }
     }
 
+    /**
+     * @param Request $request
+     */
     public function adminLogin(Request $request)
     {
         $formData = $request->getBody();
@@ -60,6 +72,9 @@ class LoginController
         }
     }
 
+    /**
+     * @param Request $request
+     */
     public function logout(Request $request){
         if ($request->getSession('SuperAdmin')!=false) {
             $url = '/superAdmin';
@@ -72,6 +87,9 @@ class LoginController
         redirect($url);
     }
 
+    /**
+     * @param Request $request
+     */
     public function sendResetEmail(Request $request)
     {
         $formData = $request->getBody();
@@ -89,8 +107,8 @@ class LoginController
 
         // Additional headers
         $headers .= 'From: '.$fromName.'<'.$from.'>' . "\r\n";
-//        $headers .= 'Cc: welcome@example.com' . "\r\n";
-//        $headers .= 'Bcc: welcome2@example.com' . "\r\n";
+        $headers .= 'Cc: welcome@example.com' . "\r\n";
+        $headers .= 'Bcc: welcome2@example.com' . "\r\n";
         echo $htmlContent;
         // Send email
         if(mail($to, $subject, $htmlContent, $headers)){
