@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3623589-d6c9-451a-a5fc-5976342512e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Controllers/ClassTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ClassTypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helpers/Autoload/Autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/Autoload/Autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/Classes/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/Classes/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,13 +31,54 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Config/config.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+              <folding>
+                <element signature="e#30#46#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+              <folding>
+                <element signature="e#25#43#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Helpers/Classes/Model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#27#45#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>ROLE</find>
       <find>Exception</find>
-      <find>PDOException</find>
       <find>role_name</find>
       <find>role_id</find>
       <find>roleId</find>
@@ -48,6 +90,8 @@
       <find>dd</find>
       <find>SuperAdminData</find>
       <find>AdminData</find>
+      <find>fillable</find>
+      <find>PDOException</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -55,7 +99,6 @@
       <replace>movieCategory</replace>
       <replace>Movie Category</replace>
       <replace>MovieCategory</replace>
-      <replace>Throwable</replace>
       <replace>classType</replace>
       <replace>ClassType</replace>
       <replace>class_type_name</replace>
@@ -74,6 +117,8 @@
       <replace>throwError</replace>
       <replace>SuperAdmin</replace>
       <replace>Admin</replace>
+      <replace>fields</replace>
+      <replace>Throwable</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -82,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Helpers/Exceptions/Exception.php" />
         <option value="$PROJECT_DIR$/Views/backend/partial/head_links.php" />
         <option value="$PROJECT_DIR$/Views/backend/partial/foot_links.php" />
         <option value="$PROJECT_DIR$/Views/backend/movies/view_all.php" />
@@ -113,7 +157,6 @@
         <option value="$PROJECT_DIR$/Controllers/ScreenController.php" />
         <option value="$PROJECT_DIR$/Controllers/ShowController.php" />
         <option value="$PROJECT_DIR$/Controllers/TheatreController.php" />
-        <option value="$PROJECT_DIR$/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/Models/ClassType.php" />
         <option value="$PROJECT_DIR$/Models/Movie.php" />
         <option value="$PROJECT_DIR$/Models/MovieCategory.php" />
@@ -121,7 +164,6 @@
         <option value="$PROJECT_DIR$/Models/Screen.php" />
         <option value="$PROJECT_DIR$/Models/Show.php" />
         <option value="$PROJECT_DIR$/Models/Theatre.php" />
-        <option value="$PROJECT_DIR$/Models/User.php" />
         <option value="$PROJECT_DIR$/Views/backend/authentication/superAdminLogin.php" />
         <option value="$PROJECT_DIR$/Views/backend/authentication/adminLogin.php" />
         <option value="$PROJECT_DIR$/Routes/web.php" />
@@ -130,9 +172,12 @@
         <option value="$PROJECT_DIR$/Views/backend/partial/side_bar.php" />
         <option value="$PROJECT_DIR$/Views/backend/partial/nav_bar.php" />
         <option value="$PROJECT_DIR$/Assets/backend/css/main.css" />
-        <option value="$PROJECT_DIR$/Controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/Controllers/ClassTypeController.php" />
         <option value="$PROJECT_DIR$/Helpers/Autoload/Autoload.php" />
+        <option value="$PROJECT_DIR$/Controllers/LoginController.php" />
+        <option value="$PROJECT_DIR$/Models/User.php" />
+        <option value="$PROJECT_DIR$/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/Helpers/Classes/Model.php" />
       </list>
     </option>
   </component>
@@ -159,6 +204,11 @@
             <path>
               <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
               <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
+              <item name="Config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -171,6 +221,12 @@
               <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
               <item name="Helpers" type="462c0819:PsiDirectoryNode" />
               <item name="Autoload" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
+              <item name="Helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="Classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
@@ -244,17 +300,19 @@
       <workItem from="1572512121929" duration="1367000" />
       <workItem from="1572516640776" duration="12183000" />
       <workItem from="1572531856660" duration="11000" />
-      <workItem from="1572542067666" duration="10889000" />
+      <workItem from="1572542067666" duration="10970000" />
+      <workItem from="1572889272277" duration="21864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149501000" />
+    <option name="totallyTimeSpent" value="171446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2386273" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24261771" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -267,7 +325,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.22750424" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.53989816" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -300,20 +358,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Views/backend/movies/edit_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="28" column="116" selection-start-line="28" selection-start-column="116" selection-end-line="28" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/backend/class_types/create_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/backend/class_types/view_all.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -520,18 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="e#30#46#0#PHP" expanded="true" />
-            <element signature="e#128#201#0#PHP" />
-            <element signature="e#207#474#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/ClassType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -638,16 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding>
-            <element signature="e#25#43#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/backend/authentication/adminLogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -707,16 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="119" column="1" lean-forward="true" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
-          <folding>
-            <element signature="e#34#50#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/ClassTypeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -739,6 +751,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="e#34#50#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config/config.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#25#43#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="e#30#46#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Helpers/Classes/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#27#45#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

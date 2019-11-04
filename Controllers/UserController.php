@@ -8,14 +8,13 @@ use Throwable;
 
 class UserController
 {
-    public function __construct()
-    {
+    public function __construct() {
         auth('SuperAdmin');
     }
 
     public function userIndex(){
         try {
-            $users = User::all();
+            $users = User::all()->toArray();
             export('backend/users/view_all',$users);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -34,7 +33,14 @@ class UserController
     public function userStore(Request $request){
         try {
             $formData = $request->getBody();
-            User::insert($formData);
+            $user = new User();
+            $user->r_role_id = $formData['userRole'];
+            $user->name = $formData['userName'];
+            $user->email = $formData['userEmail'];
+            $user->password = base64_encode($formData['userPassword']);
+            $user->mobile = $formData['userMobile'];
+            $user->status = $formData['userStatus'];
+            $user->save();
             redirect('/userIndex');
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -44,7 +50,7 @@ class UserController
     public function userShow(Request $request){
         try {
             $formData = $request->getBody();
-            $user = User::select($formData['user_id']);
+            $user = User::find($formData['user_id'])->toArray();
             export('backend/users/show',$user);
         } catch (Throwable $e){
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -54,7 +60,7 @@ class UserController
     public function userEditForm(Request $request){
         try {
             $formData = $request->getBody();
-            $user = User::select($formData['user_id']);
+            $user = User::find($formData['user_id'])->toArray();
             $roles = Role::all();
             export('backend/users/edit_form',[$user,$roles]);
         } catch (Throwable $e) {
@@ -65,7 +71,14 @@ class UserController
     public function userUpdate(Request $request){
         try {
             $formData = $request->getBody();
-            User::update($formData);
+            $user = User::find($formData['userId']);
+            $user->r_role_id = $formData['userRole'];
+            $user->name = $formData['userName'];
+            $user->email = $formData['userEmail'];
+            $user->password = base64_encode($formData['userPassword']);
+            $user->mobile = $formData['userMobile'];
+            $user->status = $formData['userStatus'];
+            $user->save();
             redirect('/userIndex');
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -75,7 +88,7 @@ class UserController
     public function userDelete(Request $request){
         try {
             $formData = $request->getBody();
-            User::delete($formData['user_id']);
+            User::findDelete($formData['user_id']);
             redirect('/userIndex');
         } catch (Throwable $e){
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
