@@ -28,7 +28,7 @@
                     <form method="post" action="<?php echo baseURL().'/classTypeStore' ?>">
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="classTypeName" placeholder="Enter Name Of Class Type" required>
+                                <input class="form-control" type="text" name="class_type_name" placeholder="Enter Name Of Class Type" required>
                             </div>
                             <div class="col-md-6">
                                 <input class="form-control btn-primary" type="submit" value="CREATE NEW CLASS TYPE">

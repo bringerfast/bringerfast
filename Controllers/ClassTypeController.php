@@ -18,13 +18,13 @@ class ClassTypeController
      */
     public function __construct()
     {
-        auth('SuperAdmin');
+        auth(['SuperAdmin','Admin']);
     }
 
     public function classTypeIndex(){
         try {
             $classTypes = ClassType::all();
-            export('backend/class_types/view_all',$classTypes);
+            export('backend/class_types/view_all',$classTypes->objects);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -60,7 +60,7 @@ class ClassTypeController
     public function classTypeShow(Request $request){
         try {
             $formData = $request->getBody();
-            $classType = ClassType::select($formData['class_type_id']);
+            $classType = ClassType::find($formData['class_type_id']);
             export('backend/class_types/show',$classType);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -73,7 +73,7 @@ class ClassTypeController
     public function classTypeEditForm(Request $request){
         try {
             $formData = $request->getBody();
-            $classType = ClassType::select($formData['class_type_id']);
+            $classType = ClassType::find($formData['class_type_id']);
             export('backend/class_types/edit_form',$classType);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -99,7 +99,7 @@ class ClassTypeController
     public function classTypeDelete(Request $request){
         try {
             $formData = $request->getBody();
-            ClassType::delete($formData['class_type_id']);
+            ClassType::findDelete($formData['class_type_id']);
             redirect('/classTypeIndex');
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());

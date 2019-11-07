@@ -30,29 +30,29 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="userId" required>
+                                    <select class="form-control" name="r_user_id" required>
                                         <option disabled selected>Select User</option>
                                         <?php foreach ($users as $user){ ?>
-                                            <option value="<?php echo $user['user_id']?>"><?php echo $user['name']; ?></option>
+                                            <option value="<?php echo $user->user_id?>"><?php echo $user->name; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="from-group">
-                                    <input class="form-control" type="text" name="theatreName" placeholder="Enter Theatre Name" required>
+                                    <input class="form-control" type="text" name="theatre_name" placeholder="Enter Theatre Name" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="theatreAddress" placeholder="Enter Theatre Address" required>
+                                    <input class="form-control" type="text" name="address" placeholder="Enter Theatre Address" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="theatreContact" placeholder="Enter Theatre Contact" required>
+                                    <input class="form-control" type="text" name="contact" placeholder="Enter Theatre Contact" required>
                                 </div>
                             </div>
                         </div>

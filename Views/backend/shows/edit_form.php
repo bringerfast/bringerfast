@@ -29,11 +29,11 @@
                     <form method="post" action="<?php echo baseURL().'/showUpdate' ?>">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="hidden" name="showId" value="<?php echo $show['show_id'] ?>">
-                                <input class="form-control" type="text" name="showName" value="<?php echo $show['show_name']; ?>" placeholder="Enter Name Of Show" required>
+                                <input type="hidden" name="show_id" value="<?php echo $show->show_id ?>">
+                                <input class="form-control" type="text" name="show_name" value="<?php echo $show->show_name; ?>" placeholder="Enter Name Of Show" required>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control btn-primary" type="submit" value="UPDATE THIS ROLE">
+                                <input class="form-control btn-primary" type="submit" value="UPDATE THIS SHOW NAME">
                             </div>
                         </div>
                     </form>

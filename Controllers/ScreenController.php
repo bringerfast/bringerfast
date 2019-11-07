@@ -17,13 +17,13 @@ class ScreenController
 {
     public function __construct()
     {
-        auth('SuperAdmin');
+        auth(['SuperAdmin','Admin']);
     }
 
     public function screenIndex(){
         try {
-            $screens = Screen::all();
-            export('backend/screens/view_all',$screens);
+            $screens = Screen::allWithRelation();
+            export('backend/screens/view_all',$screens->objects);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -33,7 +33,7 @@ class ScreenController
         try {
             $theatres = Theatre::all();
             $classTypes = ClassType::all();
-            export('backend/screens/create_form',[$theatres,$classTypes]);
+            export('backend/screens/create_form',[$theatres->objects,$classTypes->objects]);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -52,7 +52,7 @@ class ScreenController
     public function screenShow(Request $request){
         try {
             $formData = $request->getBody();
-            $screen = Screen::select($formData['screen_id']);
+            $screen = Screen::selectWithRelation($formData['screen_id']);
             export('backend/screens/show',$screen);
         } catch (Throwable $e){
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -62,10 +62,10 @@ class ScreenController
     public function screenEditForm(Request $request){
         try {
             $formData = $request->getBody();
-            $screen = Screen::select($formData['screen_id']);
+            $screen = Screen::selectWithRelation($formData['screen_id']);
             $theatres = Theatre::all();
             $classTypes = ClassType::all();
-            export('backend/screens/edit_form',[$screen,$theatres,$classTypes]);
+            export('backend/screens/edit_form',[$screen,$theatres->objects,$classTypes->objects]);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -84,7 +84,7 @@ class ScreenController
     public function screenDelete(Request $request){
         try {
             $formData = $request->getBody();
-            Screen::delete($formData['screen_id']);
+            Screen::findDelete($formData['screen_id']);
             redirect('/screenIndex');
         } catch (Throwable $e){
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());

@@ -6,7 +6,7 @@
 <body class="app sidebar-mini">
 <?php view('backend/partial/nav_bar.php') ?>
 <?php view('backend/partial/side_bar.php') ?>
-<?php $users =  import(); ?>
+<?php $users =  import();?>
 <style>
     .table td,th{
         text-align: center;
@@ -30,8 +30,8 @@
                     <span class="pull-left">All Users</span>
                     <a href="<?php echo baseURL().'/userForm'; ?>" class="fa fa-plus pull-right text-success" title="Create New"></a>
                 </div>
-                <div class="card-body">
-                    <table class="table table-bordered">
+                <div class="card-body table-responsive">
+                    <table class="table table-bordered table-sm">
                         <thead>
                             <th>ID</th>
                             <th>Role</th>
@@ -43,19 +43,19 @@
                             <th>Actions</th>
                         </thead>
                         <tbody>
-                            <?php foreach ($users as $value){ ?>
+                            <?php foreach ($users as $user){ ?>
                                 <tr>
-                                    <td><?php echo $value['user_id']; ?></td>
-                                    <td><?php echo $value['r_role_id']; ?></td>
-                                    <td><?php echo $value['email']; ?></td>
-                                    <td><?php echo $value['name']; ?></td>
-                                    <td><?php echo $value['mobile']; ?></td>
-                                    <td><?php echo $value['password']; ?></td>
-                                    <td><?php echo $value['status']; ?></td>
+                                    <td><?php echo $user->user_id; ?></td>
+                                    <td><?php echo $user->r_role_id; ?></td>
+                                    <td><?php echo $user->email; ?></td>
+                                    <td><?php echo $user->name; ?></td>
+                                    <td><?php echo $user->mobile; ?></td>
+                                    <td><?php echo $user->password; ?></td>
+                                    <td><?php echo $user->status; ?></td>
                                     <td>
-                                        <a href="<?php echo baseURL().'/userShow?user_id='.$value['user_id']; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/userEditForm?user_id='.$value['user_id']; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/userDelete?user_id='.$value['user_id']; ?>" onclick="return confirm('Are your sure to delte ?')"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?php echo baseURL().'/userShow?user_id='.$user->user_id; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/userEditForm?user_id='.$user->user_id; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/userDelete?user_id='.$user->user_id; ?>" onclick="return confirm('Are your sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

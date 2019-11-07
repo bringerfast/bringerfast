@@ -29,31 +29,31 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $theatre['theatre_id'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $theatre->theatre_id ?>" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $theatre['r_user_id'] ?>"  readonly>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $theatre['theatre_name'] ?>" readonly>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $theatre['address'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $theatre->r_user_id ?>"  readonly>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $theatre['contact'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $theatre->theatre_name ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="text" value="<?php echo $theatre->address ?>" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="text" value="<?php echo $theatre->contact ?>" readonly>
                             </div>
                         </div>
                     </div>

@@ -6,7 +6,7 @@
 <body class="app sidebar-mini">
 <?php view('backend/partial/nav_bar.php') ?>
 <?php view('backend/partial/side_bar.php') ?>
-<?php $arr = import(); $theatres = $arr[0]; $classTypes = $arr[1]; ?>
+<?php list($theatres, $classTypes) = import();  ?>
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -30,20 +30,20 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="screenTheatreId" required>
+                                    <select class="form-control" name="r_theatre_id" required>
                                         <option disabled selected>Select Theatre</option>
                                         <?php foreach ($theatres as $theatre){ ?>
-                                            <option value="<?php echo $theatre['theatre_id']?>"><?php echo $theatre['theatre_name']; ?></option>
+                                            <option value="<?php echo $theatre->theatre_id?>"><?php echo $theatre->theatre_name; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="screenClassTypeId" required>
+                                    <select class="form-control" name="r_class_type_id" required>
                                         <option disabled selected>Select ClassType</option>
                                         <?php foreach ($classTypes as $classType){ ?>
-                                            <option value="<?php echo $classType['class_type_id']?>"><?php echo $classType['class_type_name']; ?></option>
+                                            <option value="<?php echo $classType->class_type_id?>"><?php echo $classType->class_type_name; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -52,12 +52,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="screenName" placeholder="Enter Screen Name" required>
+                                    <input class="form-control" type="text" name="screen_name" placeholder="Enter Screen Name" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="number" name="screenSeat" placeholder="Enter Screen seats" required>
+                                    <input class="form-control" type="number" name="total_seats" placeholder="Enter Screen seats" required>
                                 </div>
                             </div>
                         </div>

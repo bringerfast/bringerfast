@@ -41,17 +41,17 @@
                             <th>Actions</th>
                         </thead>
                         <tbody>
-                            <?php foreach ($theatres as $value){ ?>
+                            <?php foreach ($theatres as $theatre){ ?>
                                 <tr>
-                                    <td><?php echo $value['theatre_id']; ?></td>
-                                    <td><?php echo $value['r_user_id']; ?></td>
-                                    <td><?php echo $value['theatre_name']; ?></td>
-                                    <td><?php echo $value['address']; ?></td>
-                                    <td><?php echo $value['contact']; ?></td>
+                                    <td><?php echo $theatre->theatre_id; ?></td>
+                                    <td><?php echo $theatre->r_user_id; ?></td>
+                                    <td><?php echo $theatre->theatre_name; ?></td>
+                                    <td><?php echo $theatre->address; ?></td>
+                                    <td><?php echo $theatre->contact; ?></td>
                                     <td>
-                                        <a href="<?php echo baseURL().'/theatreShow?theatre_id='.$value['theatre_id']; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/theatreEditForm?theatre_id='.$value['theatre_id']; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/theatreDelete?theatre_id='.$value['theatre_id']; ?>" onclick="return confirm('Are your sure to delte ?')"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?php echo baseURL().'/theatreShow?theatre_id='.$theatre->theatre_id; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/theatreEditForm?theatre_id='.$theatre->theatre_id; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/theatreDelete?theatre_id='.$theatre->theatre_id; ?>" onclick="return confirm('Are your sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

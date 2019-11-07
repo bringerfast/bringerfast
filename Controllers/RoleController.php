@@ -23,7 +23,7 @@ class RoleController
     public function roleIndex(){
         try {
             $roles = Role::all();
-            export('backend/roles/view_all',$roles);
+            export('backend/roles/view_all',$roles->objects);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -50,7 +50,7 @@ class RoleController
     public function roleShow(Request $request){
         try {
             $formData = $request->getBody();
-            $role = Role::select($formData['role_id']);
+            $role = Role::find($formData['role_id']);
             export('backend/roles/show',$role);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -60,7 +60,7 @@ class RoleController
     public function roleEditForm(Request $request){
         try {
             $formData = $request->getBody();
-            $role = Role::select($formData['role_id']);
+            $role = Role::find($formData['role_id']);
             export('backend/roles/edit_form',$role);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -70,7 +70,9 @@ class RoleController
     public function roleUpdate(Request $request){
        try {
            $formData = $request->getBody();
-           Role::update($formData);
+           $role = Role::find($formData['role_id']);
+           $role->role_name = $formData['role_name'];
+           $role->save();
            redirect('/roleIndex');
        } catch (Throwable $e) {
            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -80,7 +82,7 @@ class RoleController
     public function roleDelete(Request $request){
         try {
             $formData = $request->getBody();
-            Role::delete($formData['role_id']);
+            Role::findDelete($formData['role_id']);
             redirect('/roleIndex');
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());

@@ -29,31 +29,31 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="from-group">
-                                <input class="form-control" type="text" value="<?php echo $screen['screen_id'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $screen->screen_id ?>" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $screen['screen_name'] ?>"  readonly>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $screen['theatre_name'] ?>" readonly>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $screen['class_type_name'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $screen->screen_name ?>"  readonly>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $screen['total_seats'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $screen->theatre_name ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="text" value="<?php echo $screen->class_type_name ?>" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="text" value="<?php echo $screen->total_seats ?>" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">

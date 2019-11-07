@@ -17,13 +17,13 @@ class MovieCategoryController
 {
     public function __construct()
     {
-        auth('SuperAdmin');
+        auth(['SuperAdmin','Admin']);
     }
 
     public function movieCategoryIndex(){
         try {
             $movieCategories = MovieCategory::all();
-            export('backend/movie_categories/view_all',$movieCategories);
+            export('backend/movie_categories/view_all',$movieCategories->objects);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -50,7 +50,7 @@ class MovieCategoryController
     public function movieCategoryShow(Request $request){
         try {
             $formData = $request->getBody();
-            $movieCategory = MovieCategory::select($formData['movie_category_id']);
+            $movieCategory = MovieCategory::find($formData['movie_category_id']);
             export('backend/movie_categories/show',$movieCategory);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -60,7 +60,7 @@ class MovieCategoryController
     public function movieCategoryEditForm(Request $request){
         try {
             $formData = $request->getBody();
-            $movieCategory = MovieCategory::select($formData['movie_category_id']);
+            $movieCategory = MovieCategory::find($formData['movie_category_id']);
             export('backend/movie_categories/edit_form',$movieCategory);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -70,7 +70,9 @@ class MovieCategoryController
     public function movieCategoryUpdate(Request $request){
         try {
             $formData = $request->getBody();
-            MovieCategory::update($formData);
+            $moveCategory = MovieCategory::find($formData['movie_category_id']);
+            $moveCategory->movie_category_name = $formData['movie_category_name'];
+            $moveCategory->save();
             redirect('/movieCategoryIndex');
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());

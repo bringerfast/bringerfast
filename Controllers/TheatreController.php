@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * Theatre: raja
+ * Theatre: banu
  * Date: 31/10/19
  * Time: 3:38 AM
  */
@@ -17,13 +17,13 @@ class TheatreController
 {
     public function __construct()
     {
-        auth('SuperAdmin');
+        auth(['SuperAdmin','Admin']);
     }
 
     public function theatreIndex(){
         try {
             $theatres = Theatre::all();
-            export('backend/theatres/view_all',$theatres);
+            export('backend/theatres/view_all',$theatres->objects);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -32,7 +32,7 @@ class TheatreController
     public function theatreForm(){
         try {
             $users = User::all();
-            export('backend/theatres/create_form',$users);
+            export('backend/theatres/create_form',$users->objects);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -51,7 +51,7 @@ class TheatreController
     public function theatreShow(Request $request){
         try {
             $formData = $request->getBody();
-            $theatre = Theatre::select($formData['theatre_id']);
+            $theatre = Theatre::find($formData['theatre_id']);
             export('backend/theatres/show',$theatre);
         } catch (Throwable $e){
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -61,9 +61,9 @@ class TheatreController
     public function theatreEditForm(Request $request){
         try {
             $formData = $request->getBody();
-            $theatre = Theatre::select($formData['theatre_id']);
+            $theatre = Theatre::find($formData['theatre_id']);
             $users = User::all();
-            export('backend/theatres/edit_form',[$theatre,$users]);
+            export('backend/theatres/edit_form',[$theatre,$users->objects]);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -82,7 +82,7 @@ class TheatreController
     public function theatreDelete(Request $request){
         try {
             $formData = $request->getBody();
-            Theatre::delete($formData['theatre_id']);
+            Theatre::findDelete($formData['theatre_id']);
             redirect('/theatreIndex');
         } catch (Throwable $e){
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());

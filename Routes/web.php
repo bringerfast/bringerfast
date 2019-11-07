@@ -6,10 +6,10 @@ Route::get('/',function (Request $request){
 });
 
 # Authentications
-Route::get('/superAdmin', 'LoginController@superAdminLoginForm');
-Route::post('/superAdmin', 'LoginController@superAdminLogin');
 Route::get('/admin', 'LoginController@adminLoginForm');
+Route::get('/adminRegisterForm', 'LoginController@adminRegisterForm');
 Route::post('/admin', 'LoginController@adminLogin');
+Route::post('/adminRegister', 'LoginController@adminRegister');
 Route::post('/sendResetEmail','LoginController@sendResetEmail');
 Route::get('/logout', 'LoginController@logout');
 Route::get('/dashboard','DashboardController@dashboard');

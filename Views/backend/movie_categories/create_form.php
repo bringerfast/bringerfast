@@ -28,7 +28,7 @@
                     <form method="post" action="<?php echo baseURL().'/movieCategoryStore' ?>">
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="movieCategoryName" placeholder="Enter Name Of Movie Category" required>
+                                <input class="form-control" type="text" name="movie_category_name" placeholder="Enter Name Of Movie Category" required>
                             </div>
                             <div class="col-md-6">
                                 <input class="form-control btn-primary" type="submit" value="CREATE NEW MOVIE CATEGORY">

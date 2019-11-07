@@ -27,22 +27,22 @@
                 </div>
                 <div class="card-body">
                     <form method="post" action="<?php echo baseURL().'/screenUpdate' ?>">
-                        <input type="hidden" name="screenId" value="<?php echo $screen['screen_id'];?>">
+                        <input type="hidden" name="screen_id" value="<?php echo $screen->screen_id;?>">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="screenTheareId" required>
+                                    <select class="form-control" name="r_theatre_id" required>
                                         <?php foreach ($theatres as $theatre){ ?>
-                                            <option value="<?php echo $theatre['theatre_id']?>" <?php  if($theatre['theatre_id'] == $screen['r_theatre_id']) { echo 'selected'; } ?>><?php echo $theatre['theatre_name']; ?></option>
+                                            <option value="<?php echo $theatre->theatre_id?>" <?php  if($theatre->theatre_id == $screen->r_theatre_id) { echo 'selected'; } ?>><?php echo $theatre->theatre_name; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="screenClassTypeId" required>
+                                    <select class="form-control" name="r_class_type_id" required>
                                         <?php foreach ($classTypes as $classType){ ?>
-                                            <option value="<?php echo $classType['class_type_id']?>" <?php  if($classType['class_type_id'] == $screen['r_class_type_id']) { echo 'selected'; } ?>><?php echo $classType['class_type_name']; ?></option>
+                                            <option value="<?php echo $classType->class_type_id ?>" <?php  if($classType->class_type_id == $screen->r_class_type_id) { echo 'selected'; } ?>><?php echo $classType->class_type_name; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -51,12 +51,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="screenName" value="<?php echo $screen['screen_name']; ?>" placeholder="Enter Screen Name" required>
+                                    <input class="form-control" type="text" name="screen_name" value="<?php echo $screen->screen_name; ?>" placeholder="Enter Screen Name" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="screenSeat" value="<?php echo $screen['total_seats']; ?>" placeholder="Enter Screen Seats" required>
+                                    <input class="form-control" type="text" name="total_seats" value="<?php echo $screen->total_seats; ?>" placeholder="Enter Screen Seats" required>
                                 </div>
                             </div>
                         </div>

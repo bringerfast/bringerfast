@@ -24,16 +24,16 @@
                 <div class="card-header">
                     <span class="pull-left">Show Show</span>
                     <a href="<?php echo baseURL().'/showForm'; ?>" class="fa fa-plus pull-right text-primary" title="New"></a>
-                    <a href="<?php echo baseURL().'/showEditForm?show_id='.$show['show_id']; ?>" class="fa fa-pencil pull-right text-warning" title="Edit"></a>
+                    <a href="<?php echo baseURL().'/showEditForm?show_id='.$show->show_id; ?>" class="fa fa-pencil pull-right text-warning" title="Edit"></a>
                     <a href="<?php echo baseURL().'/showIndex'; ?>" class="fa fa-list pull-right text-success" title="View All"></a>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <input class="form-control" type="text" name="showId" value="<?php echo $show['show_id'] ?>" readonly>
+                            <input class="form-control" type="text" name="show_id" value="<?php echo $show->show_id ?>" readonly>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" name="showName" value="<?php echo $show['show_name']; ?>" readonly>
+                            <input class="form-control" type="text" name="show_name" value="<?php echo $show->show_name; ?>" readonly>
                         </div>
                     </div>
                 </div>

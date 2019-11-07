@@ -28,10 +28,10 @@
                     <form method="post" action="<?php echo baseURL().'/showStore' ?>">
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="showName" placeholder="Enter Name Of Show" required>
+                                <input class="form-control" type="text" name="show_name" placeholder="Enter Name Of Show" required>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control btn-primary" type="submit" value="CREATE NEW ROLE">
+                                <input class="form-control btn-primary" type="submit" value="CREATE NEW SHOW">
                             </div>
                         </div>
                     </form>

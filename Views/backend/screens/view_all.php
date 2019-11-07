@@ -41,17 +41,17 @@
                             <th>Actions</th>
                         </thead>
                         <tbody>
-                            <?php foreach ($screens as $value){ ?>
+                            <?php foreach ($screens as $screen){ ?>
                                 <tr>
-                                    <td><?php echo $value['screen_id']; ?></td>
-                                    <td><a href="<?php echo baseURL().'/theatreShow?theatre_id='.$value['r_theatre_id']; ?>"><?php echo $value['theatre_name']; ?></a></td>
-                                    <td><a href="<?php echo baseURL().'/classTypeShow?class_type_id='.$value['r_class_type_id']; ?>"><?php echo $value['class_type_name']; ?></a></td>
-                                    <td><?php echo $value['screen_name']; ?></td>
-                                    <td><?php echo $value['total_seats']; ?></td>
+                                    <td><?php echo $screen->screen_id; ?></td>
+                                    <td><a href="<?php echo baseURL().'/theatreShow?theatre_id='.$screen->r_theatre_id; ?>"><?php echo $screen->theatre_name; ?></a></td>
+                                    <td><a href="<?php echo baseURL().'/classTypeShow?class_type_id='.$screen->r_class_type_id; ?>"><?php echo $screen->class_type_name; ?></a></td>
+                                    <td><?php echo $screen->screen_name; ?></td>
+                                    <td><?php echo $screen->total_seats; ?></td>
                                     <td>
-                                        <a href="<?php echo baseURL().'/screenShow?screen_id='.$value['screen_id']; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/screenEditForm?screen_id='.$value['screen_id']; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/screenDelete?screen_id='.$value['screen_id']; ?>" onclick="return confirm('Are your sure to delte ?')"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?php echo baseURL().'/screenShow?screen_id='.$screen->screen_id; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/screenEditForm?screen_id='.$screen->screen_id; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/screenDelete?screen_id='.$screen->screen_id; ?>" onclick="return confirm('Are your sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

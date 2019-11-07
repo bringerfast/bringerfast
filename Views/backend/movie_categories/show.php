@@ -24,16 +24,16 @@
                 <div class="card-header">
                     <span class="pull-left">Show Role</span>
                     <a href="<?php echo baseURL().'/movieCategoryForm'; ?>" class="fa fa-plus pull-right text-primary" title="New"></a>
-                    <a href="<?php echo baseURL().'/movieCategoryEditForm?movie_category_id='.$movieCategory['movie_category_id']; ?>" class="fa fa-pencil pull-right text-warning" title="Edit"></a>
+                    <a href="<?php echo baseURL().'/movieCategoryEditForm?movie_category_id='.$movieCategory->movie_category_id; ?>" class="fa fa-pencil pull-right text-warning" title="Edit"></a>
                     <a href="<?php echo baseURL().'/movieCategoryIndex'; ?>" class="fa fa-list pull-right text-success" title="View All"></a>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <input class="form-control" type="text" name="roleId" value="<?php echo $movieCategory['movie_category_id'] ?>" readonly>
+                            <input class="form-control" type="text" name="movie_category_id" value="<?php echo $movieCategory->movie_category_id ?>" readonly>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" name="roleName" value="<?php echo $movieCategory['movie_category_name']; ?>" readonly>
+                            <input class="form-control" type="text" name="movie_category_name" value="<?php echo $movieCategory->movie_category_name; ?>" readonly>
                         </div>
                     </div>
                 </div>

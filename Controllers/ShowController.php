@@ -17,13 +17,13 @@ class ShowController
 {
     public function __construct()
     {
-        auth('SuperAdmin');
+        auth(['SuperAdmin','Admin']);
     }
 
     public function showIndex(){
         try {
             $shows = Show::all();
-            export('backend/shows/view_all',$shows);
+            export('backend/shows/view_all',$shows->objects);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -50,7 +50,7 @@ class ShowController
     public function showShow(Request $request){
         try {
             $formData = $request->getBody();
-            $show = Show::select($formData['show_id']);
+            $show = Show::find($formData['show_id']);
             export('backend/shows/show',$show);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -60,7 +60,7 @@ class ShowController
     public function showEditForm(Request $request){
         try {
             $formData = $request->getBody();
-            $show = Show::select($formData['show_id']);
+            $show = Show::find($formData['show_id']);
             export('backend/shows/edit_form',$show);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
@@ -80,7 +80,7 @@ class ShowController
     public function showDelete(Request $request){
         try {
             $formData = $request->getBody();
-            Show::delete($formData['show_id']);
+            Show::findDelete($formData['show_id']);
             redirect('/showIndex');
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());

@@ -6,7 +6,7 @@
 <body class="app sidebar-mini">
 <?php view('backend/partial/nav_bar.php') ?>
 <?php view('backend/partial/side_bar.php') ?>
-<?php $user = import() ?>
+<?php $user = import(); ?>
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -23,39 +23,41 @@
             <div class="card">
                 <div class="card-header">
                     <span class="pull-left">Show User</span>
+                    <a href="<?php echo baseURL().'/userForm'; ?>" class="fa fa-plus pull-right text-primary" title="New"></a>
+                    <a href="<?php echo baseURL().'/userEditForm?role_id='.$user->user_id; ?>" class="fa fa-pencil pull-right text-warning" title="Edit"></a>
                     <a href="<?php echo baseURL().'/userIndex'; ?>" class="fa fa-list pull-right text-success" title="View All"></a>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <input class="form-control" type="text" value="<?php echo $user['role_name'] ?>" readonly>
+                            <input class="form-control" type="text" value="<?php echo $user->user_id ?>" readonly>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" value="<?php echo $user['name'] ?>"  readonly>
-                        </div>
-                    </div><hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input class="form-control" type="text" value="<?php echo $user['role_name'] ?>" readonly>
-                        </div>
-                        <div class="col-md-6">
-                            <input class="form-control" type="text" value="<?php echo $user['email'] ?>" readonly>
+                            <input class="form-control" type="text" value="<?php echo $user->name ?>"  readonly>
                         </div>
                     </div><hr>
                     <div class="row">
                         <div class="col-md-6">
-                            <input class="form-control" type="text" value="<?php echo $user['mobile'] ?>" readonly>
+                            <input class="form-control" type="text" value="<?php echo $user->r_role_id ?>" readonly>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" value="<?php echo $user['password'] ?>" readonly>
+                            <input class="form-control" type="text" value="<?php echo $user->email ?>" readonly>
                         </div>
                     </div><hr>
                     <div class="row">
                         <div class="col-md-6">
-                            <input class="form-control" type="text" value="<?php echo $user['status'] ?>" readonly>
+                            <input class="form-control" type="text" value="<?php echo $user->mobile ?>" readonly>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" value="<?php echo $user['email_verified_at'] ?>" readonly>
+                            <input class="form-control" type="text" value="<?php echo $user->password ?>" readonly>
+                        </div>
+                    </div><hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" value="<?php echo $user->status ?>" readonly>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" value="<?php echo $user->email_verified_at ?>" readonly>
                         </div>
                     </div>
                 </div>

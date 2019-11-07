@@ -46,18 +46,18 @@
                         <tbody>
                             <?php foreach ($movies as $movie){ ?>
                                 <tr>
-                                    <td><?php echo $movie['movie_id']; ?></td>
-                                    <td><?php echo $movie['r_movie_category_id']; ?></td>
-                                    <td><?php echo $movie['name']; ?></td>
-                                    <td><?php echo $movie['release_date']; ?></td>
-                                    <td><?php echo $movie['actor']; ?></td>
-                                    <td><?php echo $movie['actress']; ?></td>
-                                    <td><?php echo $movie['producer']; ?></td>
-                                    <td><?php echo $movie['director']; ?></td>
+                                    <td><?php echo $movie->movie_id; ?></td>
+                                    <td><?php echo $movie->r_movie_category_id; ?></td>
+                                    <td><?php echo $movie->name; ?></td>
+                                    <td><?php echo $movie->release_date; ?></td>
+                                    <td><?php echo $movie->actor; ?></td>
+                                    <td><?php echo $movie->actress; ?></td>
+                                    <td><?php echo $movie->producer; ?></td>
+                                    <td><?php echo $movie->director; ?></td>
                                     <td>
-                                        <a href="<?php echo baseURL().'/movieShow?movie_id='.$movie['movie_id']; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/movieEditForm?movie_id='.$movie['movie_id']; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/movieDelete?movie_id='.$movie['movie_id']; ?>" onclick="return confirm('Are your sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?php echo baseURL().'/movieShow?movie_id='.$movie->movie_id; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/movieEditForm?movie_id='.$movie->movie_id; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/movieDelete?movie_id='.$movie->movie_id; ?>" onclick="return confirm('Are your sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

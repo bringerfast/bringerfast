@@ -29,8 +29,8 @@
                     <form method="post" action="<?php echo baseURL().'/movieCategoryUpdate' ?>">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="hidden" name="movieCategoryId" value="<?php echo $movieCategory['movie_category_id'] ?>">
-                                <input class="form-control" type="text" name="movieCategoryName" value="<?php echo $movieCategory['movie_category_name']; ?>" placeholder="Enter Name Of Movie Category" required>
+                                <input type="hidden" name="movie_category_id" value="<?php echo $movieCategory->movie_category_id ?>">
+                                <input class="form-control" type="text" name="movie_category_name" value="<?php echo $movieCategory->movie_category_name; ?>" placeholder="Enter Name Of Movie Category" required>
                             </div>
                             <div class="col-md-6">
                                 <input class="form-control btn-primary" type="submit" value="UPDATE THIS MOVIE CATEGORY">

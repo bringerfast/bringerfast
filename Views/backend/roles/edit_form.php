@@ -29,8 +29,8 @@
                     <form method="post" action="<?php echo baseURL().'/roleUpdate' ?>">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="hidden" name="roleId" value="<?php echo $role['role_id'] ?>">
-                                <input class="form-control" type="text" name="roleName" value="<?php echo $role['role_name']; ?>" placeholder="Enter Name Of Role" required>
+                                <input type="hidden" name="role_id" value="<?php echo $role->role_id ?>">
+                                <input class="form-control" type="text" name="role_name" value="<?php echo $role->role_name; ?>" placeholder="Enter Name Of Role" required>
                             </div>
                             <div class="col-md-6">
                                 <input class="form-control btn-primary" type="submit" value="UPDATE THIS ROLE">

@@ -24,16 +24,20 @@
                 <div class="card-header">
                     <span class="pull-left">Show Role</span>
                     <a href="<?php echo baseURL().'/roleForm'; ?>" class="fa fa-plus pull-right text-primary" title="New"></a>
-                    <a href="<?php echo baseURL().'/roleEditForm?role_id='.$role['role_id']; ?>" class="fa fa-pencil pull-right text-warning" title="Edit"></a>
+                    <a href="<?php echo baseURL().'/roleEditForm?role_id='.$role->role_id; ?>" class="fa fa-pencil pull-right text-warning" title="Edit"></a>
                     <a href="<?php echo baseURL().'/roleIndex'; ?>" class="fa fa-list pull-right text-success" title="View All"></a>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <input class="form-control" type="text" name="roleId" value="<?php echo $role['role_id'] ?>" readonly>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="roleId" value="<?php echo $role->role_id ?>" readonly>
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" name="roleName" value="<?php echo $role['role_name']; ?>" readonly>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="roleName" value="<?php echo $role->role_name; ?>" readonly>
+                            </div>
                         </div>
                     </div>
                 </div>

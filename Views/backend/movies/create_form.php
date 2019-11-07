@@ -30,72 +30,72 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="movieCategory" required>
+                                    <select class="form-control" name="r_movie_category_id" required>
                                         <option disabled selected>Select Movie Category</option>
                                         <?php foreach ($movieCategories as $movieCategory){ ?>
-                                            <option value="<?php echo $movieCategory['movie_category_id']?>"><?php echo $movieCategory['movie_category_name']; ?></option>
+                                            <option value="<?php echo $movieCategory->movie_category_id?>"><?php echo $movieCategory->movie_category_name; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="movieName" placeholder="Enter Movie Name" required>
+                                    <input class="form-control" type="text" name="name" placeholder="Enter Movie Name" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="date" name="movieRelesedOn" placeholder="Enter Movie Release Date" required>
+                                    <input class="form-control" type="date" name="release_date" placeholder="Enter Movie Release Date" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="movieActor" placeholder="Enter Movie Actor" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control" type="text" name="movieActress" placeholder="Enter Movie Actress" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control" type="text" name="movieProducer" placeholder="Enter Movie Producer" required>
+                                    <input class="form-control" type="text" name="actor" placeholder="Enter Movie Actor" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="movieDirector" placeholder="Enter Director of movie" required>
+                                    <input class="form-control" type="text" name="actress" placeholder="Enter Movie Actress" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="time" name="movieDuration" placeholder="Enter Movie Duration" required>
+                                    <input class="form-control" type="text" name="producer" placeholder="Enter Movie Producer" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="director" placeholder="Enter Director of movie" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" type="time" name="duration" placeholder="Enter Movie Duration" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <textarea id="ckEditor" class="form-control" name="movieDescription"></textarea>
+                                    <textarea id="ckEditor" class="form-control" name="description"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="file" name="movieBannerImage" placeholder="choose Banner images" required>
+                                    <input class="form-control" type="file" name="banner_image" placeholder="choose Banner images" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="file" name="movieListImage" placeholder="choose List image" required>
+                                    <input class="form-control" type="file" name="list_image" placeholder="choose List image" required>
                                 </div>
                             </div>
                         </div>

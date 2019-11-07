@@ -51,6 +51,16 @@ class Model
         }
     }
 
+    public static function update($array){
+        $child = get_called_class();
+        $object = new $child();
+        foreach ($array as $key => $value){
+            $object->$key = $value;
+        }
+        $object->save();
+        return true;
+    }
+
     public function save(){
         try{
             $data = [];
@@ -169,6 +179,55 @@ class Model
             $statement->execute([':'.$object->primaryKey => $primaryKey]);
             return true;
         } catch (Throwable $e){
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
+    }
+
+    public static function adminAuth($email,$password){
+        try{
+            $stmt = DB::getConnection()->prepare("
+              SELECT users.r_role_id, users.* ,roles.* FROM t_users as users
+              INNER JOIN t_roles as roles
+              ON users.r_role_id = roles.role_id
+              WHERE email=:email AND password=:password AND users.r_role_id = roles.role_id LIMIT 1
+          ");
+            $stmt->execute(['email' => $email,'password' => $password]);
+            return $stmt->fetch();
+        } catch (Throwable $e){
+            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
+        }
+    }
+
+    public static function multSelect($columns, $conditions)
+    {
+        $class = get_called_class();
+        $childObject = new $class();
+        try {
+            $query = "SELECT ";
+            foreach ($columns as $column){
+                if( !next( $columns ) ){
+                    $query .= $column;
+                }else{
+                    $query .= $column.",";
+                }
+            }
+            $query .= " FROM ".$childObject->table." WHERE ";
+            foreach ($conditions as $column => $value) {
+                if( !next( $conditions ) ){
+                    $query .= $column." =:".$column;
+                }else{
+                    $query .= $column." =:".$column." AND ";
+                }
+            }
+            error_log("Mysql query = ".$query, 0);
+            $stmt = DB::getConnection()->prepare($query);
+            $stmt->execute($conditions);
+            $AllRows = [];
+            while ($row = $stmt->fetch()){
+                $AllRows[] = $row;
+            }
+            return $AllRows;
+        } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }

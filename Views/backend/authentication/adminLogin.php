@@ -11,7 +11,7 @@
     <title>Login - <?php echo constant('APP_NAME'); ?></title>
 </head>
 <body>
-<section class="material-full-bg">
+<section class="material-half-bg">
     <div class="cover"></div>
 </section>
 <section class="login-content">
@@ -39,14 +39,14 @@
                 <div class="utility">
                     <div class="animated-checkbox">
                         <label>
-                            <input type="checkbox"><span class="label-text">Stay Signed in</span>
+                            <a href="<?php echo baseURL().'/adminRegisterForm' ?>">Don't have account?</a>
                         </label>
                     </div>
-                    <p class="semibold-text mb-2"><a href="#" data-toggle="flip"><span class="text-danger">Forgot Password ?</span></a></p>
+                    <p class="semibold-text mb-2"><a href="#" data-toggle="flip"><span>Forgot Password ?</span></a></p>
                 </div>
             </div>
             <div class="form-group btn-container">
-                <button class="btn btn-danger btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
+                <button class="btn btn-block btn-primary"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
             </div>
         </form>
         <form class="forget-form" method="post" action="<?php echo baseURL().'/sendResetEmail' ?>">
@@ -56,10 +56,10 @@
                 <input class="form-control" type="email" name="userEmail" placeholder="Email" required>
             </div>
             <div class="form-group btn-container">
-                <button type="submit" class="btn btn-danger btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>RESET</button>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>RESET</button>
             </div>
             <div class="form-group mt-3">
-                <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><span class="text-danger"><i class="fa fa-angle-left fa-fw"></i> Back to Login</span></a></p>
+                <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><span><i class="fa fa-angle-left fa-fw"></i> Back to Login</span></a></p>
             </div>
         </form>
     </div>

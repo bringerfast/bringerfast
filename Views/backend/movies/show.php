@@ -29,67 +29,67 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $movie['r_movie_category_id'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $movie->r_movie_category_id ?>" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $movie['name'] ?>"  readonly>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $movie['release_date'] ?>" readonly>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $movie['actor'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $movie->name ?>"  readonly>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $movie['actress'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $movie->release_date ?>" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $movie['producer'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $movie->actor ?>" readonly>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $movie['director'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $movie->actress ?>" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $movie['duration'] ?>" readonly>
+                                <input class="form-control" type="text" value="<?php echo $movie->producer ?>" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="text" value="<?php echo $movie->director ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="text" value="<?php echo $movie->duration ?>" readonly>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <div class="form-control"><?php echo htmlspecialchars_decode($movie['description'] ) ?></div>
+                                <div class="form-control"><?php echo htmlspecialchars_decode($movie->description ) ?></div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6" style="text-align: center">
                             <div class="form-group">
-                                <img src="<?php echo $movie['banner_image'] ?>" height="200" width="400">
+                                <img src="<?php echo $movie->banner_image ?>" height="200" width="400">
                             </div>
                         </div>
                         <div class="col-md-6" style="text-align: center">
                             <div class="form-group">
-                                <img src="<?php echo $movie['list_image'] ?>" height="200" width="400">
+                                <img src="<?php echo $movie->list_image ?>" height="200" width="400">
                             </div>
                         </div>
                     </div>

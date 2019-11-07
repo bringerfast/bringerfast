@@ -40,12 +40,12 @@
                         <tbody>
                             <?php foreach ($classTypes as $classType){ ?>
                                 <tr>
-                                    <td><?php echo $classType['class_type_id']; ?></td>
-                                    <td><?php echo $classType['class_type_name']; ?></td>
+                                    <td><?php echo $classType->class_type_id; ?></td>
+                                    <td><?php echo $classType->class_type_name; ?></td>
                                     <td>
-                                        <a href="<?php echo baseURL().'/classTypeShow?class_type_id='.$classType['class_type_id']; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/classTypeEditForm?class_type_id='.$classType['class_type_id']; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/classTypeDelete?class_type_id='.$classType['class_type_id']; ?>" onclick="return confirm('Are you sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?php echo baseURL().'/classTypeShow?class_type_id='.$classType->class_type_id; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/classTypeEditForm?class_type_id='.$classType->class_type_id; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/classTypeDelete?class_type_id='.$classType->class_type_id; ?>" onclick="return confirm('Are you sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

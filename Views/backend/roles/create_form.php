@@ -28,7 +28,7 @@
                     <form method="post" action="<?php echo baseURL().'/roleStore' ?>">
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="roleName" placeholder="Enter Name Of Role" required>
+                                <input class="form-control" type="text" name="role_name" placeholder="Enter Name Of Role" required>
                             </div>
                             <div class="col-md-6">
                                 <input class="form-control btn-primary" type="submit" value="CREATE NEW ROLE">

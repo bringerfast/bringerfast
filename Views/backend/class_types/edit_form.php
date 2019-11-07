@@ -29,8 +29,8 @@
                     <form method="post" action="<?php echo baseURL().'/classTypeUpdate' ?>">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="hidden" name="classTypeId" value="<?php echo $classType['class_type_id'] ?>">
-                                <input class="form-control" type="text" name="classTypeName" value="<?php echo $classType['class_type_name']; ?>" placeholder="Enter Name Of Class Type" required>
+                                <input type="hidden" name="class_type_id" value="<?php echo $classType->class_type_id ?>">
+                                <input class="form-control" type="text" name="class_type_name" value="<?php echo $classType->class_type_name; ?>" placeholder="Enter Name Of Class Type" required>
                             </div>
                             <div class="col-md-6">
                                 <input class="form-control btn-primary" type="submit" value="UPDATE THIS CLASS TYPE">

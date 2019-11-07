@@ -38,14 +38,14 @@
                             <th>Actions</th>
                         </thead>
                         <tbody>
-                            <?php foreach ($movieCategories as $value){ ?>
+                            <?php foreach ($movieCategories as $movieCategory){ ?>
                                 <tr>
-                                    <td><?php echo $value['movie_category_id']; ?></td>
-                                    <td><?php echo $value['movie_category_name']; ?></td>
+                                    <td><?php echo $movieCategory->movie_category_id; ?></td>
+                                    <td><?php echo $movieCategory->movie_category_name; ?></td>
                                     <td>
-                                        <a href="<?php echo baseURL().'/movieCategoryShow?movie_category_id='.$value['movie_category_id']; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/movieCategoryEditForm?movie_category_id='.$value['movie_category_id']; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/movieCategoryDelete?movie_category_id='.$value['movie_category_id']; ?>" onclick="return confirm('Are you sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?php echo baseURL().'/movieCategoryShow?movie_category_id='.$movieCategory->movie_category_id; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/movieCategoryEditForm?movie_category_id='.$movieCategory->movie_category_id; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/movieCategoryDelete?movie_category_id='.$movieCategory->movie_category_id; ?>" onclick="return confirm('Are you sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

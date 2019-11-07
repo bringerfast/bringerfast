@@ -29,36 +29,36 @@
                     <form method="post" action="<?php echo baseURL().'/userStore' ?>">
                         <div class="row">
                             <div class="col-md-6">
-                                <select class="form-control" name="userRole" required>
+                                <select class="form-control" name="r_role_id" required>
                                     <option disabled selected>Select Role</option>
                                     <?php foreach ($roles as $role){ ?>
-                                        <option value="<?php echo $role['role_id']?>"><?php echo $role['role_name']; ?></option>
+                                        <option value="<?php echo $role->role_id?>"><?php echo $role->role_name; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userName" placeholder="Enter User Name" required>
+                                <input class="form-control" type="text" name="name" placeholder="Enter User Name" required>
                             </div>
                         </div><hr>
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userEmail" placeholder="Enter User Email" required>
+                                <input class="form-control" type="text" name="email" placeholder="Enter User Email" required>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userMobile" placeholder="Enter User Mobile" required>
-                            </div>
-                        </div><hr>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input class="form-control" type="text" name="userPassword" placeholder="Enter User Password" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input class="form-control" type="text" name="usercPassword" placeholder="Enter User Confirm Password" required>
+                                <input class="form-control" type="text" name="mobile" placeholder="Enter User Mobile" required>
                             </div>
                         </div><hr>
                         <div class="row">
                             <div class="col-md-6">
-                                <select class="form-control" name="userStatus" required>
+                                <input class="form-control" type="text" name="password" placeholder="Enter User Password" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" name="c_password" placeholder="Enter User Confirm Password" required>
+                            </div>
+                        </div><hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select class="form-control" name="status" required>
                                     <option disabled selected>Select Status</option>
                                     <option value="1">Active</option>
                                     <option value="0">Suspend</option>

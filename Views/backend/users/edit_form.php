@@ -6,7 +6,7 @@
 <body class="app sidebar-mini">
 <?php view('backend/partial/nav_bar.php') ?>
 <?php view('backend/partial/side_bar.php') ?>
-<?php $arr = import(); $user = $arr[0]; $roles = $arr[1]; ?>
+<?php list($user,$roles) = import();  ?>
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -22,46 +22,58 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <span class="pull-left">Edit User</span>
+                    <span class="pull-left">Edit User </span>
                     <a href="<?php echo baseURL().'/userIndex'; ?>" class="fa fa-list pull-right text-success" title="View All"></a>
                 </div>
                 <div class="card-body">
                     <form method="post" action="<?php echo baseURL().'/userUpdate' ?>">
-                        <input type="hidden" name="userId" value="<?php echo $user['user_id'];?>">
+                        <input type="hidden" name="user_id" value="<?php echo $user->user_id;?>">
                         <div class="row">
                             <div class="col-md-6">
-                                <select class="form-control" name="userRole" required>
-                                    <?php foreach ($roles as $role){ ?>
-                                        <option value="<?php echo $role['role_id']?>" <?php  if($role['role_id'] == $user['r_role_id']) { echo 'selected'; } ?>><?php echo $role['role_name']; ?></option>
-                                    <?php } ?>
-                                </select>
+                                <div class="form-group">
+                                    <select class="form-control" name="r_role_id" required>
+                                        <?php foreach ($roles as $role){ ?>
+                                            <option value="<?php echo $role->role_id?>" <?php  if($role->role_id == $user->r_role_id) { echo 'selected'; } ?>><?php echo $role->role_name; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userName" value="<?php echo $user['name']; ?>" placeholder="Enter User Name" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="name" value="<?php echo $user->name; ?>" placeholder="Enter User Name" required>
+                                </div>
                             </div>
-                        </div><hr>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userEmail" value="<?php echo $user['email']; ?>" placeholder="Enter User Email" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="email" value="<?php echo $user->email; ?>" placeholder="Enter User Email" required>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userMobile" value="<?php echo $user['mobile']; ?>" placeholder="Enter User Mobile" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="mobile" value="<?php echo $user->mobile; ?>" placeholder="Enter User Mobile" required>
+                                </div>
                             </div>
-                        </div><hr>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="userPassword" value="<?php echo $user['password']; ?>" placeholder="Enter User Password" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="password" value="<?php echo $user->password; ?>" placeholder="Enter User Password" required>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control" type="text" name="usercPassword" value="<?php echo $user['password']; ?>" placeholder="Enter User Confirm Password" required>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="c_password" value="<?php echo $user->password; ?>" placeholder="Enter User Confirm Password" required>
+                                </div>
                             </div>
-                        </div><hr>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <select class="form-control" name="userStatus" required>
+                                <select class="form-control" name="status" required>
                                     <option disabled selected>Select Status</option>
-                                    <option value="1" <?php echo $user['status']==1? 'selected':''; ?>>Active</option>
-                                    <option value="0" <?php echo $user['status']==0? 'selected':''; ?>>Suspend</option>
+                                    <option value="1" <?php echo $user->status==1? 'selected':''; ?>>Active</option>
+                                    <option value="0" <?php echo $user->status==0? 'selected':''; ?>>Suspend</option>
                                 </select>
                             </div>
                             <div class="col-md-6">

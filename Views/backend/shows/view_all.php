@@ -38,14 +38,14 @@
                             <th>Actions</th>
                         </thead>
                         <tbody>
-                            <?php foreach ($shows as $value){ ?>
+                            <?php foreach ($shows as $show){ ?>
                                 <tr>
-                                    <td><?php echo $value['show_id']; ?></td>
-                                    <td><?php echo $value['show_name']; ?></td>
+                                    <td><?php echo $show->show_id; ?></td>
+                                    <td><?php echo $show->show_name; ?></td>
                                     <td>
-                                        <a href="<?php echo baseURL().'/showShow?show_id='.$value['show_id']; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/showEditForm?show_id='.$value['show_id']; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/showDelete?show_id='.$value['show_id']; ?>" onclick="return confirm('Are you sure to delte ?')"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?php echo baseURL().'/showShow?show_id='.$show->show_id; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/showEditForm?show_id='.$show->show_id; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/showDelete?show_id='.$show->show_id; ?>" onclick="return confirm('Are you sure to delte ?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

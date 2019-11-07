@@ -24,16 +24,16 @@
                 <div class="card-header">
                     <span class="pull-left">Show Class Type</span>
                     <a href="<?php echo baseURL().'/classTypeForm'; ?>" class="fa fa-plus pull-right text-primary" title="New"></a>
-                    <a href="<?php echo baseURL().'/classTypeEditForm?class_type_id='.$classType['class_type_id']; ?>" class="fa fa-pencil pull-right text-warning" title="Edit"></a>
+                    <a href="<?php echo baseURL().'/classTypeEditForm?class_type_id='.$classType->class_type_id; ?>" class="fa fa-pencil pull-right text-warning" title="Edit"></a>
                     <a href="<?php echo baseURL().'/classTypeIndex'; ?>" class="fa fa-list pull-right text-success" title="View All"></a>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <input class="form-control" type="text" name="classTypeId" value="<?php echo $classType['class_type_id'] ?>" readonly>
+                            <input class="form-control" type="text" name="class_type_id" value="<?php echo $classType->class_type_id ?>" readonly>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" name="classTypeName" value="<?php echo $classType['class_type_name']; ?>" readonly>
+                            <input class="form-control" type="text" name="class_type_name" value="<?php echo $classType->class_type_name; ?>" readonly>
                         </div>
                     </div>
                 </div>
