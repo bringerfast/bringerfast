@@ -30,8 +30,8 @@
                     <span class="pull-left">All Roles</span>
                     <a href="<?php echo baseURL().'/roleForm'; ?>" class="fa fa-plus pull-right text-success" title="Create New"></a>
                 </div>
-                <div class="card-body">
-                    <table class="table table-bordered">
+                <div class="card-body table-responsive">
+                    <table class="table table-bordered table-sm">
                         <thead>
                             <th>ID</th>
                             <th>Role</th>

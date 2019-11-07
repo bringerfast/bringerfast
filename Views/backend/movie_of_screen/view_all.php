@@ -30,8 +30,8 @@
                     <span class="pull-left">All Movies Of Screens</span>
                     <a href="<?php echo baseURL().'/movieOfScreenForm'; ?>" class="fa fa-plus pull-right text-success" title="Create New"></a>
                 </div>
-                <div class="card-body">
-                    <table class="table table-bordered">
+                <div class="card-body table-responsive">
+                    <table class="table table-bordered table-sm">
                         <thead>
                             <th>ID</th>
                             <th>Theatre</th>
