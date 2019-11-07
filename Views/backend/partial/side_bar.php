@@ -17,17 +17,26 @@
                 <?php } ?>
             </ul>
         </li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-video-camera"></i><span class="app-menu__label">Movies & Category</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview">
+            <a class="app-menu__item" href="#" data-toggle="treeview">
+                <i class="app-menu__icon fa fa-video-camera"></i>
+                <span class="app-menu__label">Movies <?php if (is_authorised('SuperAdmin')){ echo '& Category'; } ?></span>
+                <i class="treeview-indicator fa fa-angle-right"></i>
+            </a>
             <ul class="treeview-menu">
                 <li><a class="treeview-item" href="<?php echo baseURL().'/movieIndex' ?>"><i class="icon fa fa-circle-o"></i> Movies</a></li>
+                <?php if (is_authorised('SuperAdmin')) { ?>
                 <li><a class="treeview-item" href="<?php echo baseURL().'/movieCategoryIndex' ?>"><i class="icon fa fa-circle-o"></i> Categories</a></li>
+                <?php } ?>
             </ul>
         </li>
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-film"></i><span class="app-menu__label">Theaters Setup</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
                 <li><a class="treeview-item" href="<?php echo baseURL().'/theatreIndex' ?>"><i class="icon fa fa-circle-o"></i> Theaters</a></li>
+                <?php if (is_authorised('SuperAdmin')) { ?>
                 <li><a class="treeview-item" href="<?php echo baseURL().'/classTypeIndex' ?>"><i class="icon fa fa-circle-o"></i> Classe Type</a></li>
                 <li><a class="treeview-item" href="<?php echo baseURL().'/showIndex' ?>"><i class="icon fa fa-circle-o"></i> Shows</a></li>
+                <?php } ?>
                 <li><a class="treeview-item" href="<?php echo baseURL().'/screenIndex' ?>"><i class="icon fa fa-circle-o"></i> screens</a></li>
             </ul>
         </li>
