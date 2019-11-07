@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="r_screen_id" id="r_screen_id" required>
+                                    <select class="form-control" name="r_screen_id" id="r_screen_id" onchange="setTotalSeat(this)" required>
                                         <?php foreach ($screens as $screen){ ?>
                                             <option value="<?php echo $screen['screen_id'] ?>" <?php  if($screen['screen_id'] == $movieOfScreen->r_screen_id) { echo 'selected'; } ?>><?php echo $screen['screen_name']; ?></option>
                                         <?php } ?>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="number" name="available_seats" value="<?php echo $movieOfScreen->available_seats; ?>" placeholder="Enter Screen Seats" required>
+                                    <input class="form-control" type="number" name="available_seats" id="available_seats" value="<?php echo $movieOfScreen->available_seats; ?>" placeholder="Enter Screen Seats" required>
                                 </div>
                             </div>
                         </div>
@@ -99,6 +99,7 @@
 </main>
 <?php view('backend/partial/foot_links.php') ?>
 <script>
+    var array;
     function getScreen(ele) {
         var formData = new FormData();
         formData.append('r_theatre_id',ele.value);
@@ -115,7 +116,12 @@
         function completeHandler(event) {
             $("#r_screen_id").empty();
             var sel = document.getElementById('r_screen_id');
-            var array = JSON.parse(event.target.responseText);
+            var opt = document.createElement('option');
+            opt.appendChild( document.createTextNode('Select Screen') );
+            opt.setAttribute('disabled','true');
+            opt.setAttribute('selected','true');
+            sel.appendChild(opt);
+            array = JSON.parse(event.target.responseText);
             array.forEach(myFunction);
             function myFunction(item, index) {
                 var opt = document.createElement('option');
@@ -130,6 +136,19 @@
         }
         function abortHandler() {
             console.log('abort');
+        }
+    }
+
+    function setTotalSeat(ele) {
+        if (typeof array === "undefined"){
+            getScreen(document.getElementById('r_theatre_id'));
+        } else {
+            array.forEach(myFunction);
+            function myFunction(item, index) {
+                if (ele.value == item['screen_id']){
+                    document.getElementById('available_seats').value = item['total_seats'];
+                }
+            }
         }
     }
 </script>

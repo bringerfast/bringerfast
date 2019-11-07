@@ -109,7 +109,7 @@ class ScreenController
 
     public function getScreenOfTheatre(Request $request){
         $formData = $request->getBody();
-        $screens = Screen::multSelect(['screen_id','screen_name'],['r_theatre_id'=>$formData['r_theatre_id']]);
+        $screens = Screen::multSelect(['screen_id','screen_name','total_seats'],['r_theatre_id'=>$formData['r_theatre_id']]);
         return json_encode($screens);
     }
 }

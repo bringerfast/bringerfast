@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="r_screen_id" id="r_screen_id" required>
+                                    <select class="form-control" name="r_screen_id" id="r_screen_id" onchange="setTotalSeat(this)" required>
                                         <option disabled selected>Select Screen</option>
                                     </select>
                                 </div>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="number" name="available_seats" placeholder="Enter Screen seats" required>
+                                    <input class="form-control" type="number" name="available_seats" id="available_seats" placeholder="Enter Screen seats" required>
                                 </div>
                             </div>
                         </div>
@@ -96,6 +96,7 @@
 </main>
 <?php view('backend/partial/foot_links.php') ?>
 <script>
+    var array;
     function getScreen(ele) {
         var formData = new FormData();
         formData.append('r_theatre_id',ele.value);
@@ -112,7 +113,12 @@
         function completeHandler(event) {
             $("#r_screen_id").empty();
             var sel = document.getElementById('r_screen_id');
-            var array = JSON.parse(event.target.responseText);
+            var opt = document.createElement('option');
+            opt.appendChild( document.createTextNode('Select Screen') );
+            opt.setAttribute('disabled','true');
+            opt.setAttribute('selected','true');
+            sel.appendChild(opt);
+            array = JSON.parse(event.target.responseText);
             array.forEach(myFunction);
             function myFunction(item, index) {
                 var opt = document.createElement('option');
@@ -127,6 +133,15 @@
         }
         function abortHandler() {
             console.log('abort');
+        }
+    }
+    
+    function setTotalSeat(ele) {
+        array.forEach(myFunction);
+        function myFunction(item, index) {
+            if (ele.value == item['screen_id']){
+                document.getElementById('available_seats').value = item['total_seats'];
+            }
         }
     }
 </script>
