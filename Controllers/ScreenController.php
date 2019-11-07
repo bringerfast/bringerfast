@@ -90,4 +90,10 @@ class ScreenController
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
     }
+
+    public function getScreenOfTheatre(Request $request){
+        $formData = $request->getBody();
+        $screens = Screen::multSelect(['screen_id','screen_name'],['r_theatre_id'=>$formData['r_theatre_id']]);
+        return json_encode($screens);
+    }
 }

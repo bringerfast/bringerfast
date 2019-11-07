@@ -30,8 +30,8 @@
                     <span class="pull-left">All Class Types</span>
                     <a href="<?php echo baseURL().'/classTypeForm'; ?>" class="fa fa-plus pull-right text-success" title="Create New"></a>
                 </div>
-                <div class="card-body">
-                    <table class="table table-bordered">
+                <div class="card-body table-responsive">
+                    <table class="table table-bordered table-sm">
                         <thead>
                             <th>Class Type ID</th>
                             <th>Class Type Name</th>

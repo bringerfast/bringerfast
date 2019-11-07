@@ -70,9 +70,7 @@ class RoleController
     public function roleUpdate(Request $request){
        try {
            $formData = $request->getBody();
-           $role = Role::find($formData['role_id']);
-           $role->role_name = $formData['role_name'];
-           $role->save();
+           Role::update($formData);
            redirect('/roleIndex');
        } catch (Throwable $e) {
            throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());

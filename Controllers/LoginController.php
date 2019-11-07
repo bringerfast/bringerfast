@@ -38,7 +38,7 @@ class LoginController
             return 'Sorry Given Email Already Exist';
         }
         # validation end
-        $role = Role::multSelect(['role_id','role_name'],['role_name'=>'customer']);
+        $role = Role::multSelect(['role_id','role_name'],['role_name'=>'Admin']);
         $formData['r_role_id'] = $role[0]['role_id'];
         $formData['status'] = 1;
         $formData['email_verified_at'] = NULL;

@@ -127,6 +127,25 @@ function auth($SessionKey){
     }
 }
 
+function is_authorised($SessionKey){
+    if (is_array($SessionKey)){
+        $redirect = 1;
+        foreach ($SessionKey as $value){
+            if (isset($_SESSION[$value])){
+                $redirect = 0;
+            }
+        }
+        if ($redirect){
+            return false;
+        }
+        return true;
+    } elseif (!isset($_SESSION[$SessionKey])){
+        return false;
+    } else {
+        return true;
+    }
+}
+
 /**
  * @return mixed
  * To import data from view those data were exported at controller

@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="r_theatre_id" required>
+                                    <select class="form-control" name="r_theatre_id" id="r_theatre_id" onchange="getScreen(this)" required>
                                         <option disabled selected>Select Theatre</option>
                                         <?php foreach ($theatres as $theatre){ ?>
                                             <option value="<?php echo $theatre->theatre_id?>"><?php echo $theatre->theatre_name; ?></option>
@@ -40,11 +40,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="r_screen_id" required>
+                                    <select class="form-control" name="r_screen_id" id="r_screen_id" required>
                                         <option disabled selected>Select Screen</option>
-                                        <?php foreach ($screens as $screen){ ?>
-                                            <option value="<?php echo $screen->screen_id?>"><?php echo $screen->screen_name; ?></option>
-                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -98,5 +95,40 @@
     </div>
 </main>
 <?php view('backend/partial/foot_links.php') ?>
+<script>
+    function getScreen(ele) {
+        var formData = new FormData();
+        formData.append('r_theatre_id',ele.value);
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.upload.addEventListener("progress", progressHandler, false);
+        xmlHttp.addEventListener("load", completeHandler, false);
+        xmlHttp.addEventListener("error", errorHandler, false);
+        xmlHttp.addEventListener("abort", abortHandler, false);
+        xmlHttp.open("post", "/getScreenOfTheatre");
+        xmlHttp.send(formData);
+        function progressHandler(event) {
+            console.log('loading...');
+        }
+        function completeHandler(event) {
+            $("#r_screen_id").empty();
+            var sel = document.getElementById('r_screen_id');
+            var array = JSON.parse(event.target.responseText);
+            array.forEach(myFunction);
+            function myFunction(item, index) {
+                var opt = document.createElement('option');
+                opt.appendChild( document.createTextNode(item['screen_name']) );
+                opt.value = item['screen_id'];
+                sel.appendChild(opt);
+            }
+            console.log('loading completed');
+        }
+        function errorHandler(event) {
+            console.log('error');
+        }
+        function abortHandler() {
+            console.log('abort');
+        }
+    }
+</script>
 </body>
 </html>

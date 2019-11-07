@@ -1,2 +1,1 @@
-<?php
-echo"<h1 style='text-align: center'>WELCOME</h1>";
+<h1 style="text-align: center;margin-top: 20%;">Welcome</h1>

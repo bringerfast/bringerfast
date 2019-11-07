@@ -53,9 +53,9 @@
                                     <td><?php echo $movieOfScreen->date_time; ?></td>
                                     <td><?php echo $movieOfScreen->total_seats; ?></td>
                                     <td>
-                                        <a href="<?php echo baseURL().'/movieOfScreenShow?movie_of_screen_id='.$movieOfScreen->screen_id; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/movieOfScreenEditForm?movie_of_screen_id='.$movieOfScreen->screen_id; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
-                                        <a href="<?php echo baseURL().'/movieOfScreenDelete?movie_of_screen_id='.$movieOfScreen->screen_id; ?>" onclick="return confirm('Are your sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="<?php echo baseURL().'/movieOfScreenShow?movie_of_screen_id='.$movieOfScreen->movie_of_screen_id; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/movieOfScreenEditForm?movie_of_screen_id='.$movieOfScreen->movie_of_screen_id; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>
+                                        <a href="<?php echo baseURL().'/movieOfScreenDelete?movie_of_screen_id='.$movieOfScreen->movie_of_screen_id; ?>" onclick="return confirm('Are your sure to delete ?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

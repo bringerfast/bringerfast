@@ -65,14 +65,7 @@ class UserController
     public function userUpdate(Request $request){
         try {
             $formData = $request->getBody();
-            $user = User::find($formData['user_id']);
-            $user->r_role_id = $formData['r_role_id'];
-            $user->name = $formData['name'];
-            $user->email = $formData['email'];
-            $user->password = $formData['password'];
-            $user->mobile = $formData['mobile'];
-            $user->status = $formData['status'];
-            $user->save();
+            User::update($formData);
             redirect('/userIndex');
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());

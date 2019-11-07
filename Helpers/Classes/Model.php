@@ -223,7 +223,7 @@ class Model
             $stmt = DB::getConnection()->prepare($query);
             $stmt->execute($conditions);
             $AllRows = [];
-            while ($row = $stmt->fetch()){
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 $AllRows[] = $row;
             }
             return $AllRows;
