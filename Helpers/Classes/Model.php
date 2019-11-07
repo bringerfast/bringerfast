@@ -160,7 +160,7 @@ class Model
     public function delete(){
         try{
             if (isset($this->{$this->primaryKey})){
-                $deleteQuery = 'DELETE FROM '.$this->table.' WHERE '.$this->primaryKey.' = :'.$this->primaryKey;
+                $deleteQuery = 'SET FOREIGN_KEY_CHECKS = 1; DELETE FROM '.$this->table.' WHERE '.$this->primaryKey.' = :'.$this->primaryKey;
                 $statement = DB::getConnection()->prepare($deleteQuery);
                 $statement->execute([':'.$this->primaryKey => $this->{$this->primaryKey}]);
                 return true;
@@ -174,10 +174,10 @@ class Model
         try{
             $child = get_called_class();
             $object = new $child();
-            $deleteQuery = 'DELETE FROM '.$object->table.' WHERE '.$object->primaryKey.' = :'.$object->primaryKey;
+            $deleteQuery = 'SET FOREIGN_KEY_CHECKS = 1; DELETE FROM '.$object->table.' WHERE '.$object->primaryKey.' = :'.$object->primaryKey;
+            error_log($deleteQuery);
             $statement = DB::getConnection()->prepare($deleteQuery);
             $statement->execute([':'.$object->primaryKey => $primaryKey]);
-            return true;
         } catch (Throwable $e){
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }

@@ -29,5 +29,16 @@
                 <li><a class="treeview-item" href="<?php echo baseURL().'/screenIndex' ?>"><i class="icon fa fa-circle-o"></i> screens</a></li>
             </ul>
         </li>
+        <li><a class="app-menu__item" href="<?php echo baseURL().'/movieOfScreenIndex'; ?>"><i class="app-menu__icon fa fa-hourglass"></i><span class="app-menu__label">Movie Of Screen</span></a></li>
+        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-list-alt"></i><span class="app-menu__label">Booking Details</span></a></li>
+        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-money"></i><span class="app-menu__label">Payments</span></a></li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-cogs"></i><span class="app-menu__label">System</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Memory Usage</a></li>
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Error Logs</a></li>
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Documentation</a></li>
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Setting</a></li>
+            </ul>
+        </li>
     </ul>
 </aside>

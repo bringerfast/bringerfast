@@ -86,6 +86,14 @@ Route::get('/screenEditForm', 'ScreenController@screenEditForm');
 Route::post('/screenUpdate', 'ScreenController@screenUpdate');
 Route::get('/screenDelete', 'ScreenController@screenDelete');
 
+# Movie Of Screen CRUD
+Route::get('/movieOfScreenIndex', 'MovieOfScreenController@index');
+Route::get('/movieOfScreenForm', 'MovieOfScreenController@create');
+Route::post('/movieOfScreenStore', 'MovieOfScreenController@store');
+Route::get('/movieOfScreenShow', 'MovieOfScreenController@show');
+Route::get('/movieOfScreenEditForm', 'MovieOfScreenController@edit');
+Route::post('/movieOfScreenUpdate', 'MovieOfScreenController@update');
+Route::get('/movieOfScreenDelete', 'MovieOfScreenController@delete');
 
 
 

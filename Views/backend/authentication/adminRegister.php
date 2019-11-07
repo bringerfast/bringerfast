@@ -139,7 +139,7 @@
 
         if (!CheckPassword(userPassword.value)){
             returnValue = false;
-            getByID('userPasswordLabel').innerHTML="<span>User Password <span  style='color:red''>* should contain alphanumeric & at least 6 char</span></span >";
+            getByID('userPasswordLabel').innerHTML="<span>User Password <span  style='color:red''>* alphanumeric & 6 char needed</span></span >";
         }
 
         if (userPassword.value != userConfirmPassword.value){
