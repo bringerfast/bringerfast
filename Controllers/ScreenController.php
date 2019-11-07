@@ -42,6 +42,14 @@ class ScreenController
     public function screenStore(Request $request){
         try {
             $formData = $request->getBody();
+            $classTypes = ClassType::all();
+            $allClasses = $classTypes->objects;
+            $Array = [];
+            foreach ($allClasses as $allClass){
+                array_push($Array, [str_replace(' ','_',$allClass->class_type_name)=>$formData[str_replace(' ','_',$allClass->class_type_name)]]);
+                unset($formData[str_replace(' ','_',$allClass->class_type_name)]);
+            }
+            $formData['classes_seats'] = json_encode($Array);
             Screen::insert($formData);
             redirect('/screenIndex');
         } catch (Throwable $e) {
@@ -74,6 +82,14 @@ class ScreenController
     public function screenUpdate(Request $request){
         try {
             $formData = $request->getBody();
+            $classTypes = ClassType::all();
+            $allClasses = $classTypes->objects;
+            $Array = [];
+            foreach ($allClasses as $allClass){
+                array_push($Array, [str_replace(' ','_',$allClass->class_type_name)=>$formData[str_replace(' ','_',$allClass->class_type_name)]]);
+                unset($formData[str_replace(' ','_',$allClass->class_type_name)]);
+            }
+            $formData['classes_seats'] = json_encode($Array);
             Screen::update($formData);
             redirect('/screenIndex');
         } catch (Throwable $e) {

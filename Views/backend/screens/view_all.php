@@ -35,7 +35,7 @@
                         <thead>
                             <th>Screen ID</th>
                             <th>Theatre</th>
-                            <th>Class</th>
+                            <th>Classes & Seats</th>
                             <th>Screen Name</th>
                             <th>Total Seats</th>
                             <th>Actions</th>
@@ -45,9 +45,19 @@
                                 <tr>
                                     <td><?php echo $screen->screen_id; ?></td>
                                     <td><a href="<?php echo baseURL().'/theatreShow?theatre_id='.$screen->r_theatre_id; ?>"><?php echo $screen->theatre_name; ?></a></td>
-                                    <td><a href="<?php echo baseURL().'/classTypeShow?class_type_id='.$screen->r_class_type_id; ?>"><?php echo $screen->class_type_name; ?></a></td>
+                                    <td>
+                                        <?php
+                                            $jsonArray = json_decode($screen->classes_seats);
+                                            foreach ($jsonArray as $key => $value){
+                                                foreach ( (array)$value as $k => $v){
+                                                    $k = str_replace('_',' ',$k);
+                                                    echo "<button class='btn-success'> $k : $v</button>&nbsp;&nbsp;";
+                                                }
+                                            }
+                                        ?>
+                                    </td>
                                     <td><?php echo $screen->screen_name; ?></td>
-                                    <td><?php echo $screen->total_seats; ?></td>
+                                    <td><?php echo "<button class='btn-danger' style='width: 100%'>$screen->total_seats</button>"; ?></td>
                                     <td>
                                         <a href="<?php echo baseURL().'/screenShow?screen_id='.$screen->screen_id; ?>"><i class="fa fa-eye text-primary" style="margin-right: 5%;"></i></a>
                                         <a href="<?php echo baseURL().'/screenEditForm?screen_id='.$screen->screen_id; ?>"><i class="fa fa-pencil text-warning" style="margin-right: 5%;"></i></a>

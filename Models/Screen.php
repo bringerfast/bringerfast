@@ -18,7 +18,7 @@ class Screen extends Model
 {
     protected $table = 't_screens';
     protected $primaryKey = 'screen_id';
-    protected $fields = ['r_theatre_id','r_class_type_id','screen_name','total_seats'];
+    protected $fields = ['r_theatre_id','classes_seats','screen_name','total_seats'];
 
     /**
      * @return array
@@ -30,18 +30,14 @@ class Screen extends Model
             $stmt = DB::getConnection()->prepare("
               SELECT 
                   screens.r_theatre_id, 
-                  screens.r_class_type_id, 
+                  screens.classes_seats	, 
                   screens.*,
-                  theatres.*, 
-                  class_types.* 
+                  theatres.*
               FROM 
                   t_screens as screens
               INNER JOIN 
                   t_theatres as theatres
                   ON theatres.theatre_id = screens.r_theatre_id
-              INNER JOIN 
-                  t_class_types as class_types
-                  ON class_types.class_type_id = screens.r_class_type_id
             ");
             $stmt->execute();
             $objects = [];
@@ -66,18 +62,14 @@ class Screen extends Model
             $stmt = DB::getConnection()->prepare(" 
               SELECT 
                   screens.r_theatre_id, 
-                  screens.r_class_type_id, 
+                  screens.classes_seats, 
                   screens.*,
-                  theatres.*, 
-                  class_types.* 
+                  theatres.*
               FROM 
                   t_screens as screens
               INNER JOIN 
                   t_theatres as theatres
                   ON theatres.theatre_id = screens.r_theatre_id
-              INNER JOIN 
-                  t_class_types as class_types
-                  ON class_types.class_type_id = screens.r_class_type_id
               WHERE screen_id = :screen_id LIMIT 1"
             );
             $stmt->execute([':screen_id' => $screen_id]);

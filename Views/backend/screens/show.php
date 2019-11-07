@@ -45,8 +45,19 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" type="text" value="<?php echo $screen->class_type_name ?>" readonly>
+                            <div class="form-group form-control">
+                                <?php
+                                $jsonArray = json_decode($screen->classes_seats);
+                                $total = 0;
+                                foreach ($jsonArray as $key => $value){
+                                    foreach ( (array)$value as $k => $v){
+                                        $k = str_replace('_',' ',$k);
+                                        echo "<button class='btn-success'> $k : $v</button>&nbsp;&nbsp;";
+                                        $total += $v;
+                                    }
+                                }
+                                echo "<button class='btn-danger'> Total Seats : $total </button>";
+                                ?>
                             </div>
                         </div>
                     </div>

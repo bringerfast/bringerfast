@@ -40,30 +40,29 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="r_class_type_id" required>
-                                        <option disabled selected>Select ClassType</option>
-                                        <?php foreach ($classTypes as $classType){ ?>
-                                            <option value="<?php echo $classType->class_type_id?>"><?php echo $classType->class_type_name; ?></option>
-                                        <?php } ?>
-                                    </select>
+                                    <input class="form-control" type="text" name="screen_name" placeholder="Enter Screen Name" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control" type="text" name="screen_name" placeholder="Enter Screen Name" required>
-                                </div>
+                                <table class="table table-sm">
+                                    <?php foreach ($classTypes as $classType) { ?>
+                                        <tr>
+                                            <td><label class="semibold-text" style="margin-top: 10px;"><?php echo $classType->class_type_name ?></label></td>
+                                            <td>:</td>
+                                            <td><input class="form-control" type="number" name="<?php echo $classType->class_type_name ?>" placeholder="number of seats" required></td>
+                                        </tr>
+                                    <?php } ?>
+                                </table>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control" type="number" name="total_seats" placeholder="Enter Screen seats" required>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input class="form-control btn btn-primary" type="submit" value="Create New Screen" required>
+                                <div class="form-group">
+                                    <input class="form-control btn btn-primary" type="submit" value="Create New Screen" required>
+                                </div>
                             </div>
                         </div>
                     </form>

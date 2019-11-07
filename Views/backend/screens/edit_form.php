@@ -6,7 +6,7 @@
 <body class="app sidebar-mini">
 <?php view('backend/partial/nav_bar.php') ?>
 <?php view('backend/partial/side_bar.php') ?>
-<?php $arr = import(); $screen = $arr[0]; $theatres = $arr[1]; $classTypes = $arr[2]; ?>
+<?php list($screen,$theatres,$classTypes) = import(); ?>
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -40,32 +40,38 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="r_class_type_id" required>
-                                        <?php foreach ($classTypes as $classType){ ?>
-                                            <option value="<?php echo $classType->class_type_id ?>" <?php  if($classType->class_type_id == $screen->r_class_type_id) { echo 'selected'; } ?>><?php echo $classType->class_type_name; ?></option>
-                                        <?php } ?>
-                                    </select>
+                                    <input class="form-control" type="text" name="screen_name" value="<?php echo $screen->screen_name; ?>" placeholder="Enter Screen Name" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" name="screen_name" value="<?php echo $screen->screen_name; ?>" placeholder="Enter Screen Name" required>
+                                    <table class="table table-sm">
+                                        <?php
+                                        $TempArray = [];
+                                        foreach (json_decode($screen->classes_seats) as $key => $value){
+                                            foreach ((array)$value as $k => $v){
+                                                $TempArray[$k]=$v;
+                                            }
+                                        }
+                                        foreach ($classTypes as $classType) { ?>
+                                            <tr>
+                                                <td><label class="semibold-text" style="margin-top: 10px;"><?php echo $classType->class_type_name ?></label></td>
+                                                <td>:</td>
+                                                <td><input class="form-control" type="number" name="<?php echo $classType->class_type_name ?>" placeholder="number of seats" value="<?php echo $TempArray[str_replace(' ','_',$classType->class_type_name)] ?>" required></td>
+                                            </tr>
+                                        <?php } ?>
+                                    </table>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="total_seats" value="<?php echo $screen->total_seats; ?>" placeholder="Enter Screen Seats" required>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-
-                            </div>
-                            <div class="col-md-6">
-                                <input class="form-control btn btn-primary" type="submit" value="Update This Screen" required>
+                                <div class="form-group">
+                                    <input class="form-control btn btn-primary" type="submit" value="Update This Screen" required>
+                                </div>
                             </div>
                         </div>
                     </form>
