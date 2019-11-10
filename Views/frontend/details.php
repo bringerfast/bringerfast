@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <?php view('frontend/partial/head_links.php') ?>
+<?php $movieOfScreen = import() ?>
 </head>
 <body style="background: transparent;">
 <?php view('frontend/partial/header.php') ?>
@@ -17,17 +18,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <a href="#">
-                    <img src="<?php echo asset('uploads/images/1573167988_4418241524_1572467151_7313336968_bigil_banner1.jpg')?>" alt="Los Angeles" width="1100" height="500">
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="#">
-                    <img src="<?php echo asset('uploads/images/1573167988_4418241524_1572467151_7313336968_bigil_banner1.jpg')?>" alt="Los Angeles" width="1100" height="500">
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="#">
-                    <img src="<?php echo asset('uploads/images/1573167988_4418241524_1572467151_7313336968_bigil_banner1.jpg')?>" alt="Los Angeles" width="1100" height="500">
+                    <img src="<?php echo $movieOfScreen->banner_image ?>" alt="Los Angeles" width="1100" height="500">
                 </a>
             </div>
         </div>
@@ -42,9 +33,9 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-3 text-center" style="margin-top: -150px">
+                <div class="col-md-3 text-center" style="margin-top: -100px">
                     <div class="card card-inverse card-info">
-                        <img class="card-img-top" src="https://picsum.photos/200/150/?random" style="padding: 10px" height="300px">
+                        <img class="card-img-top" src="<?php echo $movieOfScreen->list_image ?>" style="padding: 5px" height="300">
                     </div>
                     <div class="card card-inverse card-info">
                         <div class="card-block">
@@ -75,26 +66,98 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <?php for ($i=0;$i<3;$i++) { ?>
-                            <div class="col-md-4 text-center">
-                                <div class="card card-inverse card-info">
-                                    <a href="#">
-                                        <img class="card-img-top" src="https://picsum.photos/200/150/?random" height="300px">
-                                    </a>
-                                    <div class="card-block">
-                                        <div class="card-text">
-                                            description
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="btn btn-sm btn-success float-left">Name of movie</small>
-                                        <button class="btn btn-sm btn-info float-right"><i class="fa fa-heart"></i></i></button>
+                <div class="col-md-9 border">
+                    <div class="row form-group">
+                        <div class="col-md-4 form-group">
+                            <div class="card" style="height: 100%">
+                                <div class="card-header">Movie Details</div>
+                                <div class="card-body">
+                                    <table class="table table-sm table-borderless">
+                                        <tr>
+                                            <td>Movie</td>
+                                            <td>:</td>
+                                            <td><?php echo $movieOfScreen->name ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Duration</td>
+                                            <td>:</td>
+                                            <td><?php echo $movieOfScreen->duration ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Actor</td>
+                                            <td>:</td>
+                                            <td><?php echo $movieOfScreen->actor ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Actress</td>
+                                            <td>:</td>
+                                            <td><?php echo $movieOfScreen->actress ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Director</td>
+                                            <td>:</td>
+                                            <td><?php echo $movieOfScreen->director ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Producer</td>
+                                            <td>:</td>
+                                            <td><?php echo $movieOfScreen->producer ?></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 form-group">
+                            <div class="card" style="height: 100%">
+                                <div class="card-header">Movie Description</div>
+                                <div class="card-body">
+                                    <?php echo html_entity_decode($movieOfScreen->description)?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">Theatres & Details</div>
+                                <div class="card-body">
+                                    <div class="col-md-6 text-center">
+                                        <table class="table table-sm table-striped">
+                                            <tr>
+                                                <td>Date & time</td>
+                                                <td>:</td>
+                                                <td><?php echo $movieOfScreen->date_time ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>show</td>
+                                                <td>:</td>
+                                                <td><?php echo $movieOfScreen->show_name ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Screen</td>
+                                                <td>:</td>
+                                                <td><?php echo $movieOfScreen->screen_name ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Theatre</td>
+                                                <td>:</td>
+                                                <td><?php echo $movieOfScreen->theatre_name ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Address</td>
+                                                <td>:</td>
+                                                <td><?php echo $movieOfScreen->address ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control pull-left" type="number" placeholder="number of seats"></td>
+                                                <td></td>
+                                                <td><button class="btn btn-success pull-right">Book Now</button></td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>

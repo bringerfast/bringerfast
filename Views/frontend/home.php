@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php view('frontend/partial/head_links.php') ?>
-<?php list($movieCategories) = import(); ?>
+<?php list($movieCategories,$movieOfScreens) = import(); ?>
 </head>
 <body style="background: transparent;">
 <?php view('frontend/partial/header.php') ?>
@@ -16,21 +16,21 @@
         </ul>
         <!-- The slideshow -->
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <a href="#">
-                    <img src="<?php echo asset('uploads/images/1573167988_4418241524_1572467151_7313336968_bigil_banner1.jpg')?>" alt="Los Angeles" width="1100" height="500">
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="#">
-                    <img src="<?php echo asset('uploads/images/1573167988_4418241524_1572467151_7313336968_bigil_banner1.jpg')?>" alt="Los Angeles" width="1100" height="500">
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="#">
-                    <img src="<?php echo asset('uploads/images/1573167988_4418241524_1572467151_7313336968_bigil_banner1.jpg')?>" alt="Los Angeles" width="1100" height="500">
-                </a>
-            </div>
+            <?php foreach ($movieOfScreens as $key => $movieOfScreen) { ?>
+                <?php reset($movieOfScreens); if ($key === key($movieOfScreens)) { ?>
+                    <div class="carousel-item active">
+                        <a href="#">
+                            <img src="<?php echo $movieOfScreen->banner_image ?>" alt="Los Angeles" width="1100" height="500">
+                        </a>
+                    </div>
+                <?php } else { ?>
+                    <div class="carousel-item ">
+                        <a href="#">
+                            <img src="<?php echo $movieOfScreen->banner_image ?>" alt="Los Angeles" width="1100" height="500">
+                        </a>
+                    </div>
+                <?php } ?>
+            <?php } ?>
         </div>
         <!-- Left and right controls -->
         <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -105,11 +105,11 @@
                 </div>
                 <div class="col-md-9">
                     <div class="row">
-                        <?php for ($i=0;$i<15;$i++) { ?>
+                        <?php foreach ($movieOfScreens as $movieOfScreen) {  ?>
                             <div class="col-md-4 text-center">
                                 <div class="card card-inverse card-info">
-                                    <a href="<?php echo baseURL().'/details'; ?>">
-                                        <img class="card-img-top" src="https://picsum.photos/200/150/?random" height="300px">
+                                    <a href="<?php echo baseURL().'/details?movie_of_screen_id='.$movieOfScreen->movie_of_screen_id; ?>">
+                                        <img class="card-img-top" src="<?php echo $movieOfScreen->list_image ?>" height="300px">
                                     </a>
                                     <div class="card-block">
                                         <div class="card-text">
@@ -117,7 +117,7 @@
                                         </div>
                                     </div>
                                     <div class="card-footer">
-                                        <small class="btn btn-sm btn-success float-left">Name of movie</small>
+                                        <small class="btn btn-sm btn-success float-left"><?php echo $movieOfScreen->name ?></small>
                                         <button class="btn btn-sm btn-info float-right"><i class="fa fa-heart"></i></i></button>
                                     </div>
                                 </div>

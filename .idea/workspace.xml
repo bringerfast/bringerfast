@@ -5,39 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3623589-d6c9-451a-a5fc-5976342512e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/frontend/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/frontend/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/FrontController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/frontend/details.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/frontend/partial/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/frontend/partial/footer_links.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/frontend/partial/head_links.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/frontend/partial/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/backend/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/backend/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/backend/images/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/uploads/images/1572466385_5056158724_bigil_banner2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/uploads/images/1572467151_7313336968_bigil_banner1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/uploads/images/1572467151_8339773706_bigil_banner3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/uploads/images/1573167988_4418241524_1572467151_7313336968_bigil_banner1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/uploads/images/1573167988_8504369239_1572466385_5056158724_bigil_banner2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ClassTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ClassTypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/MovieCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MovieCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ShowController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ShowController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/TheatreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TheatreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helpers/Classes/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/Classes/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/MovieOfScreen.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/MovieOfScreen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/backend/movie_of_screen/create_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/backend/movie_of_screen/create_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/backend/movies/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/backend/movies/show.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/backend/partial/nav_bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/backend/partial/nav_bar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/backend/partial/side_bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/backend/partial/side_bar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/backend/screens/create_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/backend/screens/create_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/backend/screens/edit_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/backend/screens/edit_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/backend/theatres/create_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/backend/theatres/create_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/backend/theatres/edit_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/backend/theatres/edit_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/frontend/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/frontend/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/frontend/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/FrontController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/frontend/details.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/frontend/details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/frontend/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/frontend/home.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,46 +33,58 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/backend/screens/edit_form.php">
+        <entry file="file://$PROJECT_DIR$/Views/frontend/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="35" column="234" selection-start-line="35" selection-start-column="234" selection-end-line="35" selection-end-column="234" />
+            <state relative-caret-position="300">
+              <caret line="118" column="40" selection-start-line="108" selection-start-column="28" selection-end-line="123" selection-end-column="34" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/backend/movie_of_screen/create_form.php">
+        <entry file="file://$PROJECT_DIR$/Models/MovieOfScreen.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="81" column="30" lean-forward="true" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
+            <state relative-caret-position="-6">
+              <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+              <folding>
+                <element signature="e#6#85#0#PHP" expanded="true" />
+                <element signature="e#107#125#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controllers/ClassTypeController.php">
+        <entry file="file://$PROJECT_DIR$/Controllers/FrontController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controllers/ShowController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="315">
+              <caret line="26" column="48" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="48" />
+              <folding>
+                <element signature="e#113#138#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Views/backend/partial/nav_bar.php">
+        <entry file="file://$PROJECT_DIR$/Views/frontend/details.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            <state relative-caret-position="259">
+              <caret line="124" column="82" selection-start-line="124" selection-start-column="82" selection-end-line="124" selection-end-column="82" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -199,16 +182,12 @@
         <option value="$PROJECT_DIR$/Assets/backend/css/main.css" />
         <option value="$PROJECT_DIR$/Views/frontend/detials.php" />
         <option value="$PROJECT_DIR$/Routes/web.php" />
-        <option value="$PROJECT_DIR$/Assets/frontend/css/main.css" />
         <option value="$PROJECT_DIR$/Views/frontend/partial/header_links.php" />
         <option value="$PROJECT_DIR$/Views/frontend/partial/header.php" />
-        <option value="$PROJECT_DIR$/Views/frontend/details.php" />
         <option value="$PROJECT_DIR$/Helpers/Classes/Model.php" />
         <option value="$PROJECT_DIR$/Models/MovieOfScreen.php" />
-        <option value="$PROJECT_DIR$/Views/frontend/home.php" />
         <option value="$PROJECT_DIR$/Controllers/MovieCategoryController.php" />
         <option value="$PROJECT_DIR$/Controllers/MovieController.php" />
-        <option value="$PROJECT_DIR$/Controllers/FrontController.php" />
         <option value="$PROJECT_DIR$/Views/backend/movies/show.php" />
         <option value="$PROJECT_DIR$/Views/backend/partial/side_bar.php" />
         <option value="$PROJECT_DIR$/Views/backend/theatres/show.php" />
@@ -222,6 +201,10 @@
         <option value="$PROJECT_DIR$/Controllers/ClassTypeController.php" />
         <option value="$PROJECT_DIR$/Controllers/ShowController.php" />
         <option value="$PROJECT_DIR$/Views/backend/partial/nav_bar.php" />
+        <option value="$PROJECT_DIR$/Assets/frontend/css/main.css" />
+        <option value="$PROJECT_DIR$/Controllers/FrontController.php" />
+        <option value="$PROJECT_DIR$/Views/frontend/home.php" />
+        <option value="$PROJECT_DIR$/Views/frontend/details.php" />
       </list>
     </option>
   </component>
@@ -248,6 +231,24 @@
             <path>
               <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
               <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -264,19 +265,6 @@
               <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
               <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
               <item name="Views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
-              <item name="Views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bringerfast" type="462c0819:PsiDirectoryNode" />
-              <item name="Views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="partial" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bringerfast" type="b2602c69:ProjectViewProjectNode" />
@@ -361,12 +349,12 @@
       <workItem from="1573133457740" duration="12268000" />
       <workItem from="1573148715842" duration="22034000" />
       <workItem from="1573193321441" duration="28000" />
-      <workItem from="1573320556372" duration="49677000" />
+      <workItem from="1573320556372" duration="58055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285298000" />
+    <option name="totallyTimeSpent" value="293676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -385,7 +373,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.36332768" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.36332768" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -535,13 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/frontend/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/frontend/partial/head_links.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -577,19 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/frontend/details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/ClassType.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -616,17 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/MovieOfScreen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="true" />
-            <element signature="e#107#125#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/MovieController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -640,18 +597,6 @@
           <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding>
             <element signature="e#113#138#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/frontend/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#strong#0;n#div#0;n#div#1;n#aside#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -724,16 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/FrontController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#113#138#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/ScreenController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -784,6 +719,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/frontend/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/MovieOfScreen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding>
+            <element signature="e#6#85#0#PHP" expanded="true" />
+            <element signature="e#107#125#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/FrontController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="48" />
+          <folding>
+            <element signature="e#113#138#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/frontend/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="118" column="40" selection-start-line="108" selection-start-column="28" selection-end-line="123" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/frontend/details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="124" column="82" selection-start-line="124" selection-start-column="82" selection-end-line="124" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

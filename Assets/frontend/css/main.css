@@ -164,3 +164,16 @@ header nav ul li a.active
     font-size: 12px;
     line-height: 0;
 }
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #fffc2e;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ff2036;
+    outline: 1px solid #ff2036;
+}
