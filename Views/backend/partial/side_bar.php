@@ -9,6 +9,7 @@
     </div>
     <ul class="app-menu">
         <li><a class="app-menu__item" href="<?php echo baseURL().'/dashboard'; ?>"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+        <?php if (is_authorised('SuperAdmin')) { ?>
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">User <?php if (is_authorised('SuperAdmin')) { echo '& Role';} ?></span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
                 <li><a class="treeview-item" href="<?php echo baseURL().'/userIndex' ?>"><i class="icon fa fa-circle-o"></i> Users</a></li>
@@ -20,16 +21,15 @@
         <li class="treeview">
             <a class="app-menu__item" href="#" data-toggle="treeview">
                 <i class="app-menu__icon fa fa-video-camera"></i>
-                <span class="app-menu__label">Movies <?php if (is_authorised('SuperAdmin')){ echo '& Category'; } ?></span>
+                <span class="app-menu__label">Movies & Category</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
             </a>
             <ul class="treeview-menu">
                 <li><a class="treeview-item" href="<?php echo baseURL().'/movieIndex' ?>"><i class="icon fa fa-circle-o"></i> Movies</a></li>
-                <?php if (is_authorised('SuperAdmin')) { ?>
                 <li><a class="treeview-item" href="<?php echo baseURL().'/movieCategoryIndex' ?>"><i class="icon fa fa-circle-o"></i> Categories</a></li>
-                <?php } ?>
             </ul>
         </li>
+        <?php } ?>
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-film"></i><span class="app-menu__label">Theaters Setup</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
                 <li><a class="treeview-item" href="<?php echo baseURL().'/theatreIndex' ?>"><i class="icon fa fa-circle-o"></i> Theaters</a></li>

@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <select class="form-control" name="r_theatre_id" required>
                                         <?php foreach ($theatres as $theatre){ ?>
-                                            <option value="<?php echo $theatre->theatre_id?>" <?php  if($theatre->theatre_id == $screen->r_theatre_id) { echo 'selected'; } ?>><?php echo $theatre->theatre_name; ?></option>
+                                            <option value="<?php echo $theatre->theatre_id?>" <?php  if($theatre->theatre_id == $screen->r_theatre_id) { echo 'selected'; } ?>><?php echo $theatre->theatre_name." (".$theatre->address.")"; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>

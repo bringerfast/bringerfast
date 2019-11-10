@@ -14992,6 +14992,14 @@ be a descendant of the grid when it is being dragged.
   transition: background-color 0.3s ease;
 }
 
+.app-sidebar__toggle__text {
+  font-family: fontAwesome;
+  color: #fff;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
 @media (max-width: 767px) {
   .app-sidebar__toggle {
     -webkit-box-ordinal-group: 0;

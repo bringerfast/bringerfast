@@ -1,0 +1,166 @@
+/*Nav bar style start*/
+html
+{
+    background: url(https://image.freepik.com/free-photo/concrete-wall-scratched-material-background-texture-concept_53876-42915.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    background: linear-gradient(#151985,#151985);
+    width:100%;
+    box-sizing: border-box;
+    opacity: 90%;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.6);
+    z-index: 1030;
+}
+
+header .logo
+{
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+}
+
+
+header .search-box
+{
+    height: 50px;
+    float: left;
+    padding-left: 20px;
+}
+
+header .search-input {
+    height: 30px;
+    margin-top: 10px;
+}
+
+header nav
+{
+    float: right;
+}
+
+header nav ul
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li
+{
+    list-style: none;
+}
+
+header nav ul li a
+{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    border-radius: 70%;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active
+{
+    color: #fff;
+    background: radial-gradient(red,red,white, white);
+}
+
+.menu-toggle
+{
+    color: #fff;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 991px) {
+    header{
+        padding: 0 20px;
+    }
+    .menu-toggle{
+        display: block;
+    }
+
+    header nav {
+        /*display: none;*/
+        position: absolute;
+        width: 50%;
+        height: calc(100vh - 50px);
+        background: #333;
+        top: 50px;
+        left: -100%;
+        transition: 0.5s;
+    }
+
+    header nav.active {
+        left: 0;
+    }
+
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+}
+
+/*Nav bar style end*/
+/* Carousel style start*/
+.carousel-inner img {
+    width: 100%;
+    height: 300px;
+}
+/* Carousel style end*/
+
+.list-image {
+    height: 350px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.carousel
+{
+    text-align: center;
+    align-content: center;
+}
+
+.card
+{
+    margin: 14px;
+}
+
+.border-dotted{
+    border-style: dotted;
+    margin-top: 5px;
+}
+
+.offer-text {
+    font-size: 12px;
+    line-height: 0;
+}

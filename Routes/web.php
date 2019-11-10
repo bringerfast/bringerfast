@@ -1,10 +1,9 @@
 <?php
-
+#============= Frontend Routes ==============================
 # Welcome Route
-Route::get('/',function (Request $request){
-    export('welcome',[]);
-});
-
+Route::get('/','FrontController@home');
+Route::get('/details','FrontController@details');
+#============= Backend Routes ==============================
 # Authentications
 Route::get('/admin', 'LoginController@adminLoginForm');
 Route::get('/adminRegisterForm', 'LoginController@adminRegisterForm');

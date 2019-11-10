@@ -6,7 +6,7 @@
 <body class="app sidebar-mini">
 <?php view('backend/partial/nav_bar.php') ?>
 <?php view('backend/partial/side_bar.php') ?>
-<?php list($theatre,$users) = import();?>
+<?php list($theatre,$user,$users) = import();?>
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -29,22 +29,24 @@
                     <form method="post" action="<?php echo baseURL().'/theatreUpdate' ?>">
                         <input type="hidden" name="theatre_id" value="<?php echo $theatre->theatre_id;?>">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <select class="form-control" name="r_user_id" required>
-                                        <?php foreach ($users as $user){ ?>
-                                            <option value="<?php echo $user->user_id?>" <?php  if($user->user_id == $theatre->r_user_id) { echo 'selected'; } ?>><?php echo $user->name; ?></option>
-                                        <?php } ?>
-                                    </select>
+                            <?php if (is_authorised('SuperAdmin')) { ?>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <select class="form-control" name="r_user_id" required>
+                                            <?php foreach ($users as $user){ ?>
+                                                <option value="<?php echo $user['user_id']?>" <?php  if($user['user_id'] == $theatre->r_user_id) { echo 'selected'; } ?>><?php echo $user['name']; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php } elseif (is_authorised('Admin')) { ?>
+                                <input  name="r_user_id" value="<?php echo $user->user_id ?>" style="display: none">
+                            <?php } ?>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="theatre_name" value="<?php echo $theatre->theatre_name; ?>" placeholder="Enter Theatre Name" required>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="address" value="<?php echo $theatre->address; ?>" placeholder="Enter Theatre Address" required>
@@ -54,10 +56,6 @@
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="contact" value="<?php echo $theatre->contact; ?>" placeholder="Enter Theatre Contact" required>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">

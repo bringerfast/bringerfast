@@ -33,7 +33,7 @@
                                     <select class="form-control" name="r_theatre_id" required>
                                         <option disabled selected>Select Theatre</option>
                                         <?php foreach ($theatres as $theatre){ ?>
-                                            <option value="<?php echo $theatre->theatre_id?>"><?php echo $theatre->theatre_name; ?></option>
+                                            <option value="<?php echo $theatre->theatre_id?>"><?php echo $theatre->theatre_name." (".$theatre->address.")"; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -47,7 +47,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <table class="table table-sm">
-                                    <?php foreach ($classTypes as $classType) { ?>
+                                    <?php foreach (array_reverse($classTypes) as $classType) { ?>
                                         <tr>
                                             <td><label class="semibold-text" style="margin-top: 10px;"><?php echo $classType->class_type_name ?></label></td>
                                             <td>:</td>

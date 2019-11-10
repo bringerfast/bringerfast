@@ -8,6 +8,7 @@
 
 namespace Controllers;
 
+use Models\Role;
 use Models\Theatre;
 use Models\User;
 use Request\Request;
@@ -29,10 +30,12 @@ class TheatreController
         }
     }
 
-    public function theatreForm(){
+    public function theatreForm(Request $request){
         try {
-            $users = User::all();
-            export('backend/theatres/create_form',$users->objects);
+            $user = User::find($request->getSession('CurrentUserData')['user_id']);
+            $role = Role::multSelect(['*'],['role_name'=>'Admin']);
+            $users = User::multSelect(['*'],['r_role_id' => $role[0]['role_id']]);
+            export('backend/theatres/create_form',[$user,$users]);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }
@@ -62,8 +65,10 @@ class TheatreController
         try {
             $formData = $request->getBody();
             $theatre = Theatre::find($formData['theatre_id']);
-            $users = User::all();
-            export('backend/theatres/edit_form',[$theatre,$users->objects]);
+            $user = User::find($request->getSession('CurrentUserData')['user_id']);
+            $role = Role::multSelect(['*'],['role_name'=>'Admin']);
+            $users = User::multSelect(['*'],['r_role_id' => $role[0]['role_id']]);
+            export('backend/theatres/edit_form',[$theatre,$user,$users]);
         } catch (Throwable $e) {
             throwError($e->getMessage()." at line ".$e->getLine()." in ".$e->getFile());
         }

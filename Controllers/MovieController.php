@@ -17,7 +17,7 @@ class MovieController
 {
     public function __construct()
     {
-        auth(['SuperAdmin','Admin']);
+        auth(['SuperAdmin']);
     }
 
     public function movieIndex(){

@@ -138,7 +138,7 @@ class Model
     public static function all(){
         $child = get_called_class();
         $object = new $child();
-        $sql = "SELECT * FROM $object->table";
+        $sql = "SELECT * FROM $object->table ORDER BY $object->primaryKey DESC ";
         $stmt = $object->connection->prepare($sql);
         $stmt->execute();
         $objects = [];

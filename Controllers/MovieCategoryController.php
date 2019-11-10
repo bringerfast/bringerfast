@@ -17,7 +17,7 @@ class MovieCategoryController
 {
     public function __construct()
     {
-        auth(['SuperAdmin','Admin']);
+        auth(['SuperAdmin']);
     }
 
     public function movieCategoryIndex(){

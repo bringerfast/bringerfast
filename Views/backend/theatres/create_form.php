@@ -6,7 +6,7 @@
 <body class="app sidebar-mini">
 <?php view('backend/partial/nav_bar.php') ?>
 <?php view('backend/partial/side_bar.php') ?>
-<?php $users = import() ?>
+<?php list($user,$users) = import() ?>
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -28,23 +28,25 @@
                 <div class="card-body">
                     <form method="post" action="<?php echo baseURL().'/theatreStore' ?>">
                         <div class="row">
+                            <?php if (is_authorised('SuperAdmin')) { ?>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <select class="form-control" name="r_user_id" required>
                                         <option disabled selected>Select User</option>
                                         <?php foreach ($users as $user){ ?>
-                                            <option value="<?php echo $user->user_id?>"><?php echo $user->name; ?></option>
+                                            <option value="<?php echo $user['user_id']?>"><?php echo $user['name']; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                             </div>
+                            <?php } elseif (is_authorised('Admin')) { ?>
+                                <input  name="r_user_id" value="<?php echo $user->user_id ?>" style="display: none">
+                            <?php } ?>
                             <div class="col-md-6">
                                 <div class="from-group">
                                     <input class="form-control" type="text" name="theatre_name" placeholder="Enter Theatre Name" required>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="address" placeholder="Enter Theatre Address" required>
@@ -54,10 +56,6 @@
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="contact" placeholder="Enter Theatre Contact" required>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">

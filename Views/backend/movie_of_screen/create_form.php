@@ -10,7 +10,7 @@
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-dashboard"></i> Movies Of Screends</h1>
+            <h1><i class="fa fa-dashboard"></i> Movies Of Screens</h1>
             <p>Manage Movies Of Screens</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
@@ -33,7 +33,7 @@
                                     <select class="form-control" name="r_theatre_id" id="r_theatre_id" onchange="getScreen(this)" required>
                                         <option disabled selected>Select Theatre</option>
                                         <?php foreach ($theatres as $theatre){ ?>
-                                            <option value="<?php echo $theatre->theatre_id?>"><?php echo $theatre->theatre_name; ?></option>
+                                            <option value="<?php echo $theatre->theatre_id?>"><?php echo $theatre->theatre_name." (".$theatre->address.")"; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -51,7 +51,7 @@
                                 <div class="form-group">
                                     <select class="form-control" name="r_show_id" required>
                                         <option disabled selected>Select Show</option>
-                                        <?php foreach ($shows as $show){ ?>
+                                        <?php foreach (array_reverse($shows) as $show){ ?>
                                             <option value="<?php echo $show->show_id ?>"><?php echo $show->show_name; ?></option>
                                         <?php } ?>
                                     </select>

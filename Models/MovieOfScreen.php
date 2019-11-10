@@ -30,7 +30,7 @@ class MovieOfScreen extends Model
             INNER JOIN t_theatres ON theatre_id = r_theatre_id
             INNER JOIN t_screens ON screen_id = r_screen_id
             INNER JOIN t_shows ON show_id = r_show_id
-            INNER JOIN t_movies ON movie_id = r_movie_id");
+            INNER JOIN t_movies ON movie_id = r_movie_id ORDER BY $object->primaryKey DESC");
             $stmt->execute();
             $objects = [];
             while ($data = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -58,7 +58,7 @@ class MovieOfScreen extends Model
               INNER JOIN t_screens ON screen_id = r_screen_id
               INNER JOIN t_shows ON show_id = r_show_id
               INNER JOIN t_movies ON movie_id = r_movie_id
-              WHERE movie_of_screen_id = :movie_of_screen_id LIMIT 1"
+              WHERE movie_of_screen_id = :movie_of_screen_id LIMIT 1 "
             );
             $stmt->execute([':movie_of_screen_id' => $movie_of_screen_id]);
             $data = $stmt->fetch(PDO::FETCH_ASSOC);

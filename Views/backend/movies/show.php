@@ -77,7 +77,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <div class="form-control"><?php echo htmlspecialchars_decode($movie->description ) ?></div>
+                                <textarea class="form-control" id="ckEditor"><?php echo $movie->description  ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="col-md-6" style="text-align: center">
                             <div class="form-group">
-                                <img src="<?php echo $movie->list_image ?>" height="200" width="400">
+                                <img src="<?php echo $movie->list_image ?>" height="300" width="200">
                             </div>
                         </div>
                     </div>
@@ -102,5 +102,8 @@
     </div>
 </main>
 <?php view('backend/partial/foot_links.php') ?>
+<script>
+    CKEDITOR.replace( 'ckEditor' );
+</script>
 </body>
 </html>
