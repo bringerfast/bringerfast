@@ -3,6 +3,7 @@
 # Welcome Route
 Route::get('/','FrontController@home');
 Route::get('/details','FrontController@details');
+Route::post('/booking','FrontController@booking');
 #============= Backend Routes ==============================
 # Authentications
 Route::get('/admin', 'LoginController@adminLoginForm');

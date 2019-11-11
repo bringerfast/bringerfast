@@ -26,4 +26,8 @@ class FrontController
         $movieOfScreen = MovieOfScreen::selectWithRelation($formData['movie_of_screen_id']);
         export('frontend/details',$movieOfScreen);
     }
+
+    public function booking(Request $request) {
+        export('frontend/booking','');
+    }
 }

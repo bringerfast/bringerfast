@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-9 border">
+                <div class="col-md-9">
                     <div class="row form-group">
                         <div class="col-md-4 form-group">
                             <div class="card" style="height: 100%">
@@ -149,9 +149,16 @@
                                                 <td><?php echo $movieOfScreen->address ?></td>
                                             </tr>
                                             <tr>
-                                                <td><input class="form-control pull-left" type="number" placeholder="number of seats"></td>
-                                                <td></td>
-                                                <td><button class="btn btn-success pull-right">Book Now</button></td>
+                                                <td>Ticket Price</td>
+                                                <td>:</td>
+                                                <td><?php echo "RS. 250"; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <form action="<?php echo baseURL().'/booking' ?>" method="post">
+                                                    <td><input class="form-control pull-left" type="number" placeholder="number of seats"></td>
+                                                    <td></td>
+                                                    <td><button class="btn btn-success pull-right">Book Now</button></td>
+                                                </form>
                                             </tr>
                                         </table>
                                     </div>
