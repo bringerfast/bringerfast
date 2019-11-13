@@ -1,9 +1,9 @@
 <?php
 #============= Frontend Routes ==============================
-# Welcome Route
 Route::get('/','FrontController@home');
 Route::get('/details','FrontController@details');
 Route::post('/booking','FrontController@booking');
+
 #============= Backend Routes ==============================
 # Authentications
 Route::get('/admin', 'LoginController@adminLoginForm');
@@ -13,6 +13,10 @@ Route::post('/adminRegister', 'LoginController@adminRegister');
 Route::post('/sendResetEmail','LoginController@sendResetEmail');
 Route::get('/logout', 'LoginController@logout');
 Route::get('/dashboard','DashboardController@dashboard');
+
+# Admin Reset Password
+Route::post('/sendOTP','ResetController@sendOTP');
+Route::post('/resetAdmin','ResetController@resetAdmin');
 
 # Role CRUD
 Route::get('/roleIndex', 'RoleController@roleIndex');

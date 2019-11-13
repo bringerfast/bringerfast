@@ -49,11 +49,11 @@
                 <button class="btn btn-block btn-primary"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
             </div>
         </form>
-        <form class="forget-form" method="post" action="<?php echo baseURL().'/sendResetEmail' ?>">
+        <form class="forget-form" method="post" action="<?php echo baseURL().'/sendOTP' ?>">
             <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Forgot Password ?</h3>
             <div class="form-group">
                 <label class="control-label">EMAIL</label>
-                <input class="form-control" type="email" name="userEmail" placeholder="Email" required>
+                <input class="form-control" type="email" name="email" placeholder="Email" required>
             </div>
             <div class="form-group btn-container">
                 <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>RESET</button>
